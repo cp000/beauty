@@ -42,8 +42,8 @@
     <orderEntry type="module" module-name="healthDataService-impl" />
     <orderEntry type="module" module-name="activityService-api" />
     <orderEntry type="module" module-name="activityService-impl" />
-    <orderEntry type="module" module-name="notificationRemindService-api" />
-    <orderEntry type="module" module-name="notificationRemindService-impl" />
+    <orderEntry type="library" name="Maven: com.yhl:notificationRemindService-api:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: com.yhl:notificationRemindService-impl:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="weChatService-impl" />
     <orderEntry type="module" module-name="weChatService-api" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.0.8.RELEASE" level="project" />
@@ -98,6 +98,24 @@
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.2.8" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.11" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:jconsole:1.8.0">
+        <CLASSES>
+          <root url="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/lib/jconsole.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:tools:1.8.0">
+        <CLASSES>
+          <root url="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:5.1.30" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:4.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.0.8.RELEASE" level="project" />

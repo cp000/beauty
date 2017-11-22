@@ -42,15 +42,15 @@
 
 	<!-- 类型别名 -->
 	<typeAliases>
-		<typeAlias alias="Page" type="com.yhl.laoyou.common.persistence.Page" /><!--分页  -->
-		<typeAlias alias="Page" type="com.yhl.laoyou.common.persistence.Page" />
+		<typeAlias alias="Page" type="beauty.common.persistence.Page" /><!--分页  -->
+		<typeAlias alias="Page" type="beauty.common.persistence.Page" />
 	</typeAliases>
 
 	<!-- 插件配置 -->
-	<objectFactory type="com.yhl.laoyou.common.persistence.MyObjectFactory"></objectFactory>
-	<objectWrapperFactory type="com.yhl.laoyou.common.persistence.MyObjectWrapperFactory"></objectWrapperFactory>
+	<objectFactory type="beauty.common.persistence.MyObjectFactory"></objectFactory>
+	<objectWrapperFactory type="beauty.common.persistence.MyObjectWrapperFactory"></objectWrapperFactory>
 	<plugins>
-		<plugin interceptor="com.yhl.laoyou.common.persistence.interceptor.PageInterceptor"></plugin>
+		<plugin interceptor="beauty.common.persistence.interceptor.PageInterceptor"></plugin>
     </plugins>
 
 </configuration>

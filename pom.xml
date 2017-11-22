@@ -972,19 +972,13 @@
 
 		<module>beauty-service/healthDataService</module>
 		<module>beauty-service/healthService</module>
-		<module>beauty-service/memberService</module>
 		<module>beauty-service/myService</module>
 		<module>beauty-service/activityService</module>
 		<module>beauty-service/courseService</module>
-		<module>beauty-service/notificationRemindService</module>
-		<module>beauty-service/hospitalService</module>
 		<module>beauty-service/weChatService</module>
 
 		<module>beauty-web/common-web</module>
-		<module>beauty-web/hospital-web</module>
 		<module>beauty-web/health-web</module>
-		<module>beauty-web/course-web</module>
-		<module>beauty-web/activity-web</module>
 
 		<module>beauty-project/business</module>
 		<module>beauty-project/management</module>

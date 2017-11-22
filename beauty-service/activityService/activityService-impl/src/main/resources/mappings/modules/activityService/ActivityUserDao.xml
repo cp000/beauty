@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yhl.laoyou.modules.myService.dao.ActivityUserDao">
+<mapper namespace="com.beauty.modules.myService.dao.ActivityUserDao">
 
 	<insert id="addActivityUser">
 		INSERT INTO`activity_user`
@@ -19,7 +19,7 @@
 		</if>
 	</select>
 
-	<select id="getActivityUserList" resultType="com.yhl.laoyou.modules.activityService.entity.ActivityUser">
+	<select id="getActivityUserList" resultType="com.beauty.modules.activityService.entity.ActivityUser">
 		select au.id,au.activity_id,au.sys_elder_user_id as sysElderUserID,
 		 au.phoneNum,au.createDate,su.name  from activity_user au
 		inner join sys_elder_user seu on au.sys_elder_user_id=seu.id

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/activityService/activityService.iml" filepath="$PROJECT_DIR$/beauty-service/activityService/activityService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/activityService/activityService-api/activityService-api.iml" filepath="$PROJECT_DIR$/beauty-service/activityService/activityService-api/activityService-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/activityService/activityService-impl/activityService-impl.iml" filepath="$PROJECT_DIR$/beauty-service/activityService/activityService-impl/activityService-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty.iml" filepath="$PROJECT_DIR$/beauty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-common/beauty-common.iml" filepath="$PROJECT_DIR$/beauty-common/beauty-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-project/business/business.iml" filepath="$PROJECT_DIR$/beauty-project/business/business.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-web/common-web/common-web.iml" filepath="$PROJECT_DIR$/beauty-web/common-web/common-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/courseService/courseService.iml" filepath="$PROJECT_DIR$/beauty-service/courseService/courseService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/courseService/courseService-api/courseService-api.iml" filepath="$PROJECT_DIR$/beauty-service/courseService/courseService-api/courseService-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/courseService/courseService-impl/courseService-impl.iml" filepath="$PROJECT_DIR$/beauty-service/courseService/courseService-impl/courseService-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-web/health-web/health-web.iml" filepath="$PROJECT_DIR$/beauty-web/health-web/health-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/healthDataService/healthDataService.iml" filepath="$PROJECT_DIR$/beauty-service/healthDataService/healthDataService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/healthDataService/healthDataService-api/healthDataService-api.iml" filepath="$PROJECT_DIR$/beauty-service/healthDataService/healthDataService-api/healthDataService-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/healthDataService/healthDataService-impl/healthDataService-impl.iml" filepath="$PROJECT_DIR$/beauty-service/healthDataService/healthDataService-impl/healthDataService-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/healthService/healthService.iml" filepath="$PROJECT_DIR$/beauty-service/healthService/healthService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/healthService/healthService-api/healthService-api.iml" filepath="$PROJECT_DIR$/beauty-service/healthService/healthService-api/healthService-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/healthService/healthService-impl/healthService-impl.iml" filepath="$PROJECT_DIR$/beauty-service/healthService/healthService-impl/healthService-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-project/management/management.iml" filepath="$PROJECT_DIR$/beauty-project/management/management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/myService/myService.iml" filepath="$PROJECT_DIR$/beauty-service/myService/myService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/myService/myService-api/myService-api.iml" filepath="$PROJECT_DIR$/beauty-service/myService/myService-api/myService-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/myService/myService-impl/myService-impl.iml" filepath="$PROJECT_DIR$/beauty-service/myService/myService-impl/myService-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/weChatService/weChatService.iml" filepath="$PROJECT_DIR$/beauty-service/weChatService/weChatService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/weChatService/weChatService-api/weChatService-api.iml" filepath="$PROJECT_DIR$/beauty-service/weChatService/weChatService-api/weChatService-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/beauty-service/weChatService/weChatService-impl/weChatService-impl.iml" filepath="$PROJECT_DIR$/beauty-service/weChatService/weChatService-impl/weChatService-impl.iml" />
+    </modules>
+  </component>
+</project>

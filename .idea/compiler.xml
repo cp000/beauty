@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="activityService-api" />
+        <module name="activityService-impl" />
+        <module name="beauty-common" />
+        <module name="business" />
+        <module name="common-web" />
+        <module name="courseService-api" />
+        <module name="courseService-impl" />
+        <module name="health-web" />
+        <module name="healthDataService-api" />
+        <module name="healthDataService-impl" />
+        <module name="healthService-api" />
+        <module name="healthService-impl" />
+        <module name="management" />
+        <module name="myService-api" />
+        <module name="myService-impl" />
+        <module name="weChatService-api" />
+        <module name="weChatService-impl" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="activity-web" target="1.8" />
+      <module name="activityService" target="1.8" />
+      <module name="activityService-api" target="1.8" />
+      <module name="activityService-impl" target="1.8" />
+      <module name="beauty" target="1.8" />
+      <module name="beauty-common" target="1.8" />
+      <module name="business" target="1.8" />
+      <module name="common-web" target="1.8" />
+      <module name="course-web" target="1.8" />
+      <module name="courseService" target="1.8" />
+      <module name="courseService-api" target="1.8" />
+      <module name="courseService-impl" target="1.8" />
+      <module name="health-web" target="1.8" />
+      <module name="healthDataService" target="1.8" />
+      <module name="healthDataService-api" target="1.8" />
+      <module name="healthDataService-impl" target="1.8" />
+      <module name="healthService" target="1.8" />
+      <module name="healthService-api" target="1.8" />
+      <module name="healthService-impl" target="1.8" />
+      <module name="hospital-web" target="1.8" />
+      <module name="hospitalService" target="1.8" />
+      <module name="hospitalService-api" target="1.8" />
+      <module name="hospitalService-impl" target="1.8" />
+      <module name="management" target="1.8" />
+      <module name="memberService" target="1.8" />
+      <module name="memberService-api" target="1.8" />
+      <module name="memberService-impl" target="1.8" />
+      <module name="myService" target="1.8" />
+      <module name="myService-api" target="1.8" />
+      <module name="myService-impl" target="1.8" />
+      <module name="notificationRemindService" target="1.8" />
+      <module name="notificationRemindService-api" target="1.8" />
+      <module name="notificationRemindService-impl" target="1.8" />
+      <module name="weChatService" target="1.8" />
+      <module name="weChatService-api" target="1.8" />
+      <module name="weChatService-impl" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

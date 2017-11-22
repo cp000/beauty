@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yhl.laoyou.modules.sys.dao.SysHospitalUserDao">
+<mapper namespace="beauty.modules.sys.dao.SysHospitalUserDao">
 
 
     <insert id="insertSysHospitalUser">
@@ -24,7 +24,7 @@
 	</insert>
 
 
-    <select id="getSysHospitalUserByUserID" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysHospitalUserDTO">
+    <select id="getSysHospitalUserByUserID" resultType="beauty.common.dto.practitioner.Settings.SysHospitalUserDTO">
 		select shu.id,shu.sys_user_id as sysUserID,
 		so.name as officeName,shu.sys_office_id as sysOfficeID,
 		shur.role_id as sysRoleID,su.name as name,
@@ -39,7 +39,7 @@
 		where su.id=#{sysUserID}
 	</select>
 
-	<select id="getSysHospitalUserByEasemobID" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysHospitalUserDTO">
+	<select id="getSysHospitalUserByEasemobID" resultType="beauty.common.dto.practitioner.Settings.SysHospitalUserDTO">
 		SELECT * FROM `sys_hospital_user` where easemobID=#{easemobID}
 	</select>
 
@@ -51,7 +51,7 @@
 		`id`=#{id}
 	</update>
 
-	<select id="getSysHospitalUserList" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysHospitalUserDTO">
+	<select id="getSysHospitalUserList" resultType="beauty.common.dto.practitioner.Settings.SysHospitalUserDTO">
 		select shu.id,shu.sys_user_id as sysUserID,
 		so.name as officeName,shu.sys_office_id as sysOfficeID,
 		shur.role_id as sysRoleID,su.name as name,
@@ -70,7 +70,7 @@
 		</if>
 	</select>
 
-	<select id="getSysHospitalUserByInfo" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysHospitalUserDTO" parameterType="com.yhl.laoyou.common.dto.practitioner.Settings.SysHospitalUserDTO">
+	<select id="getSysHospitalUserByInfo" resultType="beauty.common.dto.practitioner.Settings.SysHospitalUserDTO" parameterType="beauty.common.dto.practitioner.Settings.SysHospitalUserDTO">
 		SELECT * FROM sys_hospital_user where 1=1
 		<if test="sysUserID != null and sysUserID != ''">
 			and sys_user_id = #{sysUserID}

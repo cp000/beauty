@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yhl.laoyou.modules.courseService.dao.LiveCourseDao">
+<mapper namespace="com.beauty.modules.courseService.dao.LiveCourseDao">
 
     <resultMap id="liveCourse" type="com.yhl.laoyou.common.dto.course.LiveCourseDTO">
         <result column="id" property="liveCourseId" jdbcType="INTEGER" />

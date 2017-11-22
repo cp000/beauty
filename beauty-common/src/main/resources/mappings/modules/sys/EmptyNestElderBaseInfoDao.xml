@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yhl.laoyou.modules.sys.dao.EmptyNestElderBaseInfoDao">
+<mapper namespace="beauty.modules.sys.dao.EmptyNestElderBaseInfoDao">
 
-    <insert id="importEmptyElderBaseInfo" parameterType="com.yhl.laoyou.common.dto.practitioner.healthService.EmptyNestElderBaseInfo" useGeneratedKeys="true"
+    <insert id="importEmptyElderBaseInfo" parameterType="beauty.common.dto.practitioner.healthService.EmptyNestElderBaseInfo" useGeneratedKeys="true"
             keyProperty="id">
         insert into
         EmptyNestElderBaseInfo (
@@ -36,7 +36,7 @@ relativesPhone1}, #{relativesAddress1},#{relativesArea1}, #{relativesName2}, #{r
 villageCadresAddress}, #{partyMemberVolunteers}, #{partyMemberVolunteersPhone}, #{partyMemberVolunteersAddress}, #{remark}, #{formHolder}, #{auditor})
     </insert>
 
-    <select id="getAllEmptyElderBaseInfo" resultType="com.yhl.laoyou.common.dto.practitioner.healthService.EmptyNestElderBaseInfo">
+    <select id="getAllEmptyElderBaseInfo" resultType="beauty.common.dto.practitioner.healthService.EmptyNestElderBaseInfo">
         select * from EmptyNestElderBaseInfo
     </select>
 </mapper>

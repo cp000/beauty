@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yhl.laoyou.modules.sys.dao.SysElderUserDao">
+<mapper namespace="beauty.modules.sys.dao.SysElderUserDao">
 
 
 	<insert id="insertSysElderUser">
@@ -25,11 +25,11 @@
 		)
 	</insert>
 
-	<select id="getSysElder" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysElderUserDTO">
+	<select id="getSysElder" resultType="beauty.common.dto.practitioner.Settings.SysElderUserDTO">
 		SELECT * FROM `sys_elder_user` where sys_user_id=#{sysUserID}
 	</select>
 
-	<select id="getSysElderUser" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysElderUserDTO">
+	<select id="getSysElderUser" resultType="beauty.common.dto.practitioner.Settings.SysElderUserDTO">
 		SELECT * FROM `sys_elder_user` where id=#{elderId}
 	</select>
 
@@ -41,7 +41,7 @@
 		`id`=#{id}
 	</update>
 
-	<select id="getSysElderUserByEasemobID" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysElderUserDTO">
+	<select id="getSysElderUserByEasemobID" resultType="beauty.common.dto.practitioner.Settings.SysElderUserDTO">
 		SELECT *,sys_user_id as sysUserID FROM `sys_elder_user` where easemobID=#{easemobID}
 	</select>
 
@@ -53,7 +53,7 @@
 		delete from sys_elder_user where id=#{id}
 	</delete>
 
-	<select id="getSysElderUserByHospitalID" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysElderUserDTO">
+	<select id="getSysElderUserByHospitalID" resultType="beauty.common.dto.practitioner.Settings.SysElderUserDTO">
 		SELECT seu.id,seu.sys_user_id as sysUserID,seu.easemobID,seu.easemobPassword,seu.memberCardID,seu.loginToken,
  		seu.sys_hospital_id as sysHospitalID  FROM `sys_elder_user` seu
 		inner join sys_user su on su.id=seu.sys_user_id

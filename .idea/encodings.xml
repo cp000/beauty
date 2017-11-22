@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-project/business" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-project/management" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/activityService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/activityService/activityService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/activityService/activityService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/courseService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/courseService/courseService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/courseService/courseService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/healthDataService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/healthDataService/healthDataService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/healthDataService/healthDataService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/healthService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/healthService/healthService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/healthService/healthService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/hospitalService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/hospitalService/hospitalService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/hospitalService/hospitalService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/memberService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/memberService/memberService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/memberService/memberService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/myService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/myService/myService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/myService/myService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/notificationRemindService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/notificationRemindService/notificationRemindService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/notificationRemindService/notificationRemindService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/weChatService" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/weChatService/weChatService-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-service/weChatService/weChatService-impl" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-web/activity-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-web/common-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-web/course-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-web/health-web" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/beauty-web/hospital-web" charset="UTF-8" />
+  </component>
+</project>

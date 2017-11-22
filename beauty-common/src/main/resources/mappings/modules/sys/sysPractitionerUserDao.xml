@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yhl.laoyou.modules.sys.dao.SysPractitionerUserDao">
+<mapper namespace="beauty.modules.sys.dao.SysPractitionerUserDao">
 
 	<insert id="insertSysPractitionerUser">
 		INSERT INTO sys_practitioner_user(
@@ -58,7 +58,7 @@
 
 
 
-	<select id="getSysPractitioner" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysPractitionerUserDTO">
+	<select id="getSysPractitioner" resultType="beauty.common.dto.practitioner.Settings.SysPractitionerUserDTO">
 		SELECT * FROM `sys_practitioner_user` where sys_user_id=#{sysUserID}
 	</select>
 
@@ -71,16 +71,16 @@
 		`id`=#{id}
 	</update>
 
-	<select id="getSysPractitionerByEasemobID" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysPractitionerUserDTO">
+	<select id="getSysPractitionerByEasemobID" resultType="beauty.common.dto.practitioner.Settings.SysPractitionerUserDTO">
 		SELECT * FROM `sys_practitioner_user` where easemobID=#{easemobID}
 	</select>
 
 
-	<select id="getSysPractitionerByID" resultType="com.yhl.laoyou.common.dto.practitioner.Settings.SysPractitionerUserDTO">
+	<select id="getSysPractitionerByID" resultType="beauty.common.dto.practitioner.Settings.SysPractitionerUserDTO">
 		SELECT * FROM `sys_practitioner_user` where id=#{id}
 	</select>
 
-	<select id="getDoctorListByHospitalID" resultType="com.yhl.laoyou.common.dto.hospital.DoctorDTO">
+	<select id="getDoctorListByHospitalID" resultType="beauty.common.dto.hospital.DoctorDTO">
 		select spu.id,name,title,spu.department,spu.easemobID,phone from sys_user su
 		inner join sys_practitioner_user spu on su.id=spu.sys_user_id
 		where spu.sys_hospital_id=#{sysHospitalID}

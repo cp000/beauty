@@ -171,8 +171,8 @@
 	<filter>
 		<filter-name>jsessionid</filter-name>
 		<filter-class>
-			com.yhl.laoyou.webapp.filter.DisableUrlSessionFilter
-		</filter-class>
+            com.beauty.webapp.business.filter.DisableUrlSessionFilter
+        </filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>jsessionid</filter-name>

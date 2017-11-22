@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yhl.laoyou.modules.sys.dao.SysBannerResourceDao">
+<mapper namespace="beauty.modules.sys.dao.SysBannerResourceDao">
 
 
     <insert id="addSysBannerResource">
@@ -9,7 +9,7 @@
 	</insert>
 
 
-    <select id="getBannerResourcePage" resultType="com.yhl.laoyou.common.dto.BannerResourceDTO">
+    <select id="getBannerResourcePage" resultType="beauty.common.dto.BannerResourceDTO">
         SELECT * FROM `sys_banner_resource` where
         del_flage!=1
         <if test="searchValue != null and searchValue !='' ">

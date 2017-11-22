@@ -25,7 +25,7 @@
 
 	<!-- 登录验证器 -->
 	<beans:bean id="myAuthenticationProcessingFilter"
-		class="com.yhl.laoyou.webapp.security.MyAuthenticationProcessingFilter">
+		class="com.beauty.webapp.business.security.MyAuthenticationProcessingFilter">
 		<!-- 处理登录的action -->
 		<beans:property name="filterProcessesUrl" value="/auth/auth_center/form" />
 		<!-- 验证成功后的处理 -->
@@ -41,7 +41,7 @@
 		<beans:property name="redirectStrategy" ref="redirectStrategy" />
 	</beans:bean>
 
-	<beans:bean id="redirectStrategy" class="com.yhl.laoyou.webapp.security.MyRedirectStrategy">
+	<beans:bean id="redirectStrategy" class="com.beauty.webapp.business.security.MyRedirectStrategy">
 	</beans:bean>
 	
 	<beans:bean id="simpleUrlAuthenticationFailureHandler"
@@ -52,7 +52,7 @@
 
 	<!-- 未登录的切入点 -->
 	<beans:bean id="authenticationProcessingFilterEntryPoint"
-				class="com.yhl.laoyou.webapp.security.MyLoginUrlAuthenticationEntryPoint">
+				class="com.beauty.webapp.business.security.MyLoginUrlAuthenticationEntryPoint">
 		<beans:constructor-arg name="loginFormUrl" value="/sso/checkLogin"/>
 	</beans:bean>
 
