@@ -42,15 +42,15 @@
 
 	<!-- 类型别名 -->
 	<typeAliases>
-		<typeAlias alias="Page" type="beauty.common.persistence.Page" /><!--分页  -->
-		<typeAlias alias="Page" type="beauty.common.persistence.Page" />
+		<typeAlias alias="Page" type="com.meixiang.beauty.common.persistence.Page" /><!--分页  -->
+		<typeAlias alias="Page" type="com.meixiang.beauty.common.persistence.Page" />
 	</typeAliases>
 
 	<!-- 插件配置 -->
-	<objectFactory type="beauty.common.persistence.MyObjectFactory"></objectFactory>
-	<objectWrapperFactory type="beauty.common.persistence.MyObjectWrapperFactory"></objectWrapperFactory>
+	<objectFactory type="com.meixiang.beauty.common.persistence.MyObjectFactory"></objectFactory>
+	<objectWrapperFactory type="com.meixiang.beauty.common.persistence.MyObjectWrapperFactory"></objectWrapperFactory>
 	<plugins>
-		<plugin interceptor="beauty.common.persistence.interceptor.PageInterceptor"></plugin>
+		<plugin interceptor="com.meixiang.beauty.common.persistence.interceptor.PageInterceptor"></plugin>
     </plugins>
 
 </configuration>

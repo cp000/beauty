@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.beauty.modules.myService.dao.SurveyDao">
+<mapper namespace="com.meixiang.beauty.modules.my.dao.SurveyDao">
 
 	<insert id="createSurveyAnswer"
-			parameterType="com.yhl.laoyou.common.dto.survey.AnswerDTO"
+			parameterType="com.beauty.laoyou.common.dto.survey.AnswerDTO"
 			keyProperty="id">
 		INSERT INTO`survey_answer`
 			(`id`,
@@ -25,7 +25,7 @@
 			#{elderIdentityNum})
 	</insert>
 
-	<select id="findSurveyAnswer" resultType="com.yhl.laoyou.common.dto.survey.AnswerDTO">
+	<select id="findSurveyAnswer" resultType="com.beauty.laoyou.common.dto.survey.AnswerDTO">
 		select * FROM survey_answer
 		where 1=1
 		<if test="id != null and id != '' ">
@@ -51,7 +51,7 @@
 		</if>
 	</select>
 
-	<update id="updateSurveyAnswer" parameterType="com.yhl.laoyou.common.dto.survey.AnswerDTO">
+	<update id="updateSurveyAnswer" parameterType="com.beauty.laoyou.common.dto.survey.AnswerDTO">
 		UPDATE survey_answer SET
 		<if test="id != null and id != '' ">
 			id=#{id}
@@ -86,7 +86,7 @@
 	</select>
 
 	<insert id="createSurveyAnswerFinal"
-			parameterType="com.yhl.laoyou.common.dto.survey.AnswerDTO"
+			parameterType="com.beauty.laoyou.common.dto.survey.AnswerDTO"
 			keyProperty="id">
 		INSERT INTO survey_answer_final
 		(id,
@@ -108,7 +108,7 @@
 		#{elderIdentityNum})
 	</insert>
 
-	<insert id="batchCreateSurveyAnswerFinal" parameterType="com.yhl.laoyou.common.dto.survey.AnswerDTO">
+	<insert id="batchCreateSurveyAnswerFinal" parameterType="com.beauty.laoyou.common.dto.survey.AnswerDTO">
 		INSERT INTO survey_answer_final
 		(id,
 		question_id,
@@ -135,7 +135,7 @@
 		SELECT elder_identity_num FROM survey_answer group by elder_identity_num ORDER BY elder_identity_num
 	</select>
 
-	<select id="getSurveyAnswer" resultType="com.yhl.laoyou.common.dto.survey.AnswerDTO">
+	<select id="getSurveyAnswer" resultType="com.beauty.laoyou.common.dto.survey.AnswerDTO">
 		select * from survey_answer where elder_identity_num=#{idCard}
 	</select>
 

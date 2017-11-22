@@ -9,9 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: com.yhl:laoyou-common:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: DHST:dahantc-http-json-api:1.0" level="project" />
-    <orderEntry type="library" name="Maven: DHST:dahantc-http-json-api-resource:1.0" level="project" />
+    <orderEntry type="module" module-name="beauty-common" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.1" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun.oss:aliyun-sdk-oss:2.6.0" level="project" />
     <orderEntry type="library" name="Maven: org.jdom:jdom:1.1" level="project" />

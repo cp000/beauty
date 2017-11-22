@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.beauty.modules.courseService.dao.LiveCourseDao">
+<mapper namespace="com.meixiang.beauty.modules.course.dao.LiveCourseDao">
 
-    <resultMap id="liveCourse" type="com.yhl.laoyou.common.dto.course.LiveCourseDTO">
+    <resultMap id="liveCourse" type="com.beauty.laoyou.common.dto.course.LiveCourseDTO">
         <result column="id" property="liveCourseId" jdbcType="INTEGER" />
         <result column="logo" property="liveCourseLogo" jdbcType="VARCHAR" />
         <result column="label" property="liveCourseLabel" jdbcType="VARCHAR" />
@@ -18,7 +18,7 @@
         <result column="url" property="liveCourseURL" jdbcType="VARCHAR" />
     </resultMap>
 
-    <resultMap id="onlineCourse" type="com.yhl.laoyou.common.dto.course.OnlineCourseDTO">
+    <resultMap id="onlineCourse" type="com.beauty.laoyou.common.dto.course.OnlineCourseDTO">
         <result column="id" property="onlineCourseId" jdbcType="INTEGER" />
         <result column="name" property="onlineCourseName" jdbcType="VARCHAR" />
         <result column="provider" property="onlineCourseProvider" jdbcType="VARCHAR" />
@@ -32,7 +32,7 @@
         <result column="studyNum" property="onlineCourseStudyNum" jdbcType="INTEGER" />
     </resultMap>
 
-    <resultMap id="onlineCourseData" type="com.yhl.laoyou.common.dto.course.OnlineCourseDataDTO">
+    <resultMap id="onlineCourseData" type="com.beauty.laoyou.common.dto.course.OnlineCourseDataDTO">
         <result column="id" property="id" jdbcType="INTEGER" />
         <result column="url" property="onlineCourseURL" jdbcType="VARCHAR" />
         <result column="duration" property="onlineCourseDuration" jdbcType="VARCHAR" />
@@ -41,7 +41,7 @@
         <result column="courseId" property="onlineCourseId" jdbcType="INTEGER" />
     </resultMap>
 
-    <resultMap id="onlineCourseDiscuss" type="com.yhl.laoyou.common.dto.course.OnlineCourseDiscussDTO">
+    <resultMap id="onlineCourseDiscuss" type="com.beauty.laoyou.common.dto.course.OnlineCourseDiscussDTO">
         <result column="id" property="discussId" jdbcType="INTEGER" />
         <result column="elderId" property="elderId" jdbcType="VARCHAR" />
         <result column="elderName" property="elderName" jdbcType="VARCHAR" />
@@ -50,13 +50,13 @@
         <result column="courseId" property="onlineCourseId" jdbcType="INTEGER" />
     </resultMap>
 
-    <resultMap id="liveCourseRegister" type="com.yhl.laoyou.common.dto.course.LiveCourseRegisterDTO">
+    <resultMap id="liveCourseRegister" type="com.beauty.laoyou.common.dto.course.LiveCourseRegisterDTO">
         <result column="id" property="id" jdbcType="INTEGER" />
         <result column="elderId" property="elderId" jdbcType="VARCHAR" />
         <result column="liveCourseId" property="liveCourseId" jdbcType="INTEGER" />
     </resultMap>
 
-    <resultMap id="onlineCourseMyCourse" type="com.yhl.laoyou.common.dto.course.OnlineCourseMyCourseDTO">
+    <resultMap id="onlineCourseMyCourse" type="com.beauty.laoyou.common.dto.course.OnlineCourseMyCourseDTO">
         <result column="id" property="myid" jdbcType="INTEGER" />
         <result column="elderId" property="elderId" jdbcType="VARCHAR" />
         <result column="courseId" property="courseId" jdbcType="INTEGER" />
@@ -122,7 +122,7 @@
         </where>
     </select>
 
-    <insert id="saveLiveCourseRegister" parameterType="com.yhl.laoyou.common.dto.course.LiveCourseRegisterDTO" useGeneratedKeys="true"
+    <insert id="saveLiveCourseRegister" parameterType="com.beauty.laoyou.common.dto.course.LiveCourseRegisterDTO" useGeneratedKeys="true"
             keyProperty="id">
         insert into live_course_register (liveCourseId,elderId)
         values (#{liveCourseId}, #{elderId})
@@ -234,7 +234,7 @@
         </choose>
     </select>
 
-    <insert id="addOnlineCourseDiscuss" parameterType="com.yhl.laoyou.common.dto.course.OnlineCourseDiscussDTO" useGeneratedKeys="true"
+    <insert id="addOnlineCourseDiscuss" parameterType="com.beauty.laoyou.common.dto.course.OnlineCourseDiscussDTO" useGeneratedKeys="true"
             keyProperty="id">
         insert into online_course_discuss (elderId,elderName,discussContent,discussDate,courseId)
         values (#{elderId}, #{elderName},#{onlineCourseDiscussContent},#{onlineCourseDiscussDate},#{onlineCourseId})

@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-    <groupId>com.yhl</groupId>
-    <artifactId>beauty</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-      <relativePath>../../pom.xml</relativePath>
-  </parent>
+        <groupId>com.meixiang</groupId>
+        <artifactId>beauty</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
 
     <artifactId>health-web</artifactId>
 
@@ -16,42 +16,42 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>common-web</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>healthService-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>healthService-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>myService-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>myService-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>healthDataService-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>healthDataService-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>

@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.yhl</groupId>
+        <groupId>com.meixiang</groupId>
         <artifactId>healthDataService</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
@@ -10,16 +10,19 @@
     <description>healthDataService-impl</description>
 
     <dependencies>
+
         <dependency>
-            <groupId>com.yhl</groupId>
+            <groupId>com.meixiang</groupId>
             <artifactId>healthDataService-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
         <dependency>
-            <groupId>com.yhl</groupId>
-            <artifactId>laoyou-common</artifactId>
+            <groupId>com.meixiang</groupId>
+            <artifactId>beauty-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>org.checkerframework</groupId>
             <artifactId>jdk7</artifactId>

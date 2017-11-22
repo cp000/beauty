@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.beauty.modules.myService.dao.ActivityDao">
+<mapper namespace="com.meixiang.beauty.modules.activity.dao.ActivityDao">
 
 	<insert id="addActivity" parameterType="com.beauty.modules.activityService.entity.Activity" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO`activity`
@@ -29,7 +29,7 @@
 		)
 	</insert>
 
-	<select id="getActivityList" resultType="com.yhl.laoyou.common.dto.activity.ActivityDTO">
+	<select id="getActivityList" resultType="com.beauty.laoyou.common.dto.activity.ActivityDTO">
 		select a.id as activityId,a.banner as activityLogo,a.title as activityName,
 		a.address as activityAddress, a.startDate as activityStartDate,aeg.groupid as activityEasemobGroupID,
 		a.endDate as activityEndDate, a.status as activityStatus ,a.description as activityDetailInfo,
@@ -59,13 +59,13 @@
 		a.status="ongoing")
 	</select>
 
-	<select id="getActivityListByElderID" resultType="com.yhl.laoyou.common.dto.activity.AttendedActivityDTO">
+	<select id="getActivityListByElderID" resultType="com.beauty.laoyou.common.dto.activity.AttendedActivityDTO">
 		select a.id as activityId,a.easemob_group_id as activityGroupId,a.banner as activityLogo,a.title as activityName from activity a
 		left join activity_user au on a.id=au.activity_id
 		where au.sys_elder_user_id = #{elderID} group by a.id order by startDate desc
 	</select>
 
-	<select id="getMyActivityListByElderID" resultType="com.yhl.laoyou.common.dto.activity.ActivityDTO">
+	<select id="getMyActivityListByElderID" resultType="com.beauty.laoyou.common.dto.activity.ActivityDTO">
 		select a.id as activityId,a.banner as activityLogo,a.title as activityName,
 		a.address as activityAddress, a.startDate as activityStartDate,
 		a.endDate as activityEndDate, a.status as activityStatus ,a.description as activityDetailInfo,
@@ -90,7 +90,7 @@
 		limit #{pageNo}
 	</select>
 
-	<select id="getMyHospitalActivityListByHospitalID" resultType="com.yhl.laoyou.common.dto.activity.ActivityDTO">
+	<select id="getMyHospitalActivityListByHospitalID" resultType="com.beauty.laoyou.common.dto.activity.ActivityDTO">
 		select a.id as activityId,a.banner as activityLogo,a.title as activityName,
 		a.address as activityAddress, a.startDate as activityStartDate,
 		a.endDate as activityEndDate, a.status as activityStatus ,a.description as activityDetailInfo,
@@ -106,7 +106,7 @@
 		UPDATE`activity` SET `status`=#{status} WHERE  `id`=#{id}
 	</update>
 
-	<select id="getMyFavoriteActivityList" resultType="com.yhl.laoyou.common.dto.activity.AttendedActivityDTO">
+	<select id="getMyFavoriteActivityList" resultType="com.beauty.laoyou.common.dto.activity.AttendedActivityDTO">
 		select a.id as activityId,a.easemob_group_id as activityGroupId,a.banner as activityLogo,a.title as activityName from activity a
 		inner join activity_favorite af on a.id=af.activity_id
 		where af.sys_elder_user_id = #{sysElderUserID} order by startDate desc
@@ -132,7 +132,7 @@
 		INSERT INTO`weibo_ip` (`ip`) VALUES (#{IP})
 	</insert>
 
-	<select id="getActivityListByBackEnd" resultType="com.yhl.laoyou.common.dto.activity.ActivityDTO">
+	<select id="getActivityListByBackEnd" resultType="com.beauty.laoyou.common.dto.activity.ActivityDTO">
 		select a.id as activityId,a.banner as activityLogo,a.title as activityName,
 		a.address as activityAddress, a.startDate as activityStartDate,
 		a.endDate as activityEndDate, a.status as activityStatus ,a.description as activityDetailInfo,

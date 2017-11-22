@@ -19,7 +19,7 @@
 	</context-param>
 
 	<listener>
-		<listener-class>com.yhl.laoyou.modules.sys.listener.WebContextListener</listener-class>
+		<listener-class>com.beauty.laoyou.modules.sys.listener.WebContextListener</listener-class>
 	</listener>
 	<listener>
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>  
@@ -74,7 +74,7 @@
 	<!-- upload file -->
 	<servlet>
 		<servlet-name>UploadFileServlet</servlet-name>
-		<servlet-class>com.yhl.laoyou.common.servlet.UploadFileServlet</servlet-class>
+		<servlet-class>com.beauty.laoyou.common.servlet.UploadFileServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>UploadFileServlet</servlet-name>
@@ -87,7 +87,7 @@
 		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
 		<init-param>
 			<param-name>org.restlet.application</param-name>
-			<param-value>com.yhl.laoyou.modules.act.rest.ActRestApplication</param-value>
+			<param-value>com.beauty.laoyou.modules.act.rest.ActRestApplication</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>
@@ -112,7 +112,7 @@
 	<!-- CKFinder -->
 	<servlet>
 		<servlet-name>CKFinderConnectorServlet</servlet-name>
-		<servlet-class>com.yhl.laoyou.common.web.CKFinderConnectorServlet</servlet-class>
+		<servlet-class>com.beauty.laoyou.common.web.CKFinderConnectorServlet</servlet-class>
 		<init-param>
 			<param-name>XMLConfig</param-name>
 			<param-value>/WEB-INF/ckfinder.xml</param-value>
@@ -123,7 +123,7 @@
 		</init-param>
 		<init-param>
 			<param-name>configuration</param-name>
-			<param-value>com.yhl.laoyou.common.web.CKFinderConfig</param-value>
+			<param-value>com.beauty.laoyou.common.web.CKFinderConfig</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -151,7 +151,7 @@
 	<!-- Userfiles download -->
 	<servlet>
 	  	<servlet-name>UserfilesDownloadServlet</servlet-name>
-	  	<servlet-class>com.yhl.laoyou.common.servlet.UserfilesDownloadServlet</servlet-class>
+	  	<servlet-class>com.beauty.laoyou.common.servlet.UserfilesDownloadServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 	  	<servlet-name>UserfilesDownloadServlet</servlet-name>
@@ -161,7 +161,7 @@
 	<!-- Validate code -->
 	<servlet>
 		<servlet-name>ValidateCodeServlet</servlet-name>
-		<servlet-class>com.yhl.laoyou.common.servlet.ValidateCodeServlet</servlet-class>
+		<servlet-class>com.beauty.laoyou.common.servlet.ValidateCodeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ValidateCodeServlet</servlet-name>
@@ -171,7 +171,7 @@
 	<filter>
 		<filter-name>jsessionid</filter-name>
 		<filter-class>
-            com.beauty.webapp.business.filter.DisableUrlSessionFilter
+            com.meixiang.beauty.webapp.business.filter.DisableUrlSessionFilter
         </filter-class>
 	</filter>
 	<filter-mapping>

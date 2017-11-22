@@ -2,7 +2,7 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.yhl</groupId>
+	<groupId>com.meixiang</groupId>
 	<artifactId>beauty</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
@@ -110,17 +110,17 @@
 		</repository>
 
 		<!--私有Maven-->
-		<repository>
-			<id>LY</id>
-			<name>private maven</name>
-			<url>http://101.201.209.61:8081/nexus/content/repositories/HLJK</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
+		<!--<repository>-->
+			<!--<id>LY</id>-->
+			<!--<name>private maven</name>-->
+			<!--<url>http://101.201.209.61:8081/nexus/content/repositories/HLJK</url>-->
+			<!--<releases>-->
+				<!--<enabled>true</enabled>-->
+			<!--</releases>-->
+			<!--<snapshots>-->
+				<!--<enabled>false</enabled>-->
+			<!--</snapshots>-->
+		<!--</repository>-->
 	</repositories>
 
 	<!-- 设定插件仓库 -->
@@ -131,17 +131,17 @@
 			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
 		</pluginRepository>
 		<!--私有Maven-->
-		<pluginRepository>
-			<id>LY</id>
-			<name>private maven</name>
-			<url>http://101.201.209.61:8081/nexus/content/repositories/HLJK</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</pluginRepository>
+		<!--<pluginRepository>-->
+			<!--<id>LY</id>-->
+			<!--<name>private maven</name>-->
+			<!--<url>http://101.201.209.61:8081/nexus/content/repositories/HLJK</url>-->
+			<!--<releases>-->
+				<!--<enabled>true</enabled>-->
+			<!--</releases>-->
+			<!--<snapshots>-->
+				<!--<enabled>false</enabled>-->
+			<!--</snapshots>-->
+		<!--</pluginRepository>-->
 	</pluginRepositories>
 
 

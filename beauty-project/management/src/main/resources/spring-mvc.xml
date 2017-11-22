@@ -18,7 +18,7 @@
 	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/system.properties" />
 
 	<!-- 使用Annotation自动注册Bean,只扫描@Controller -->
-	<context:component-scan base-package="com.yhl.laoyou" use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
+	<context:component-scan base-package="com.beauty.laoyou" use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 
@@ -36,7 +36,7 @@
 				</property>
 				<property name="prettyPrint" value="false"/>
 				<property name="objectMapper">
-					<bean class="com.yhl.laoyou.common.mapper.JsonMapper"></bean>
+					<bean class="com.beauty.laoyou.common.mapper.JsonMapper"></bean>
 				</property>
 			</bean>
 			<!-- 使用XML格式输出数据 -->
@@ -48,10 +48,10 @@
 						</property>
 						<property name="annotatedClasses">
 							<list>
-								<value>com.yhl.laoyou.common.persistence.BaseEntity</value>
-								<value>com.yhl.laoyou.common.supcan.treelist.TreeList</value>
-								<value>com.yhl.laoyou.common.supcan.treelist.cols.Col</value>
-								<value>com.yhl.laoyou.common.supcan.treelist.cols.Group</value>
+								<value>com.beauty.laoyou.common.persistence.BaseEntity</value>
+								<value>com.beauty.laoyou.common.supcan.treelist.TreeList</value>
+								<value>com.beauty.laoyou.common.supcan.treelist.cols.Col</value>
+								<value>com.beauty.laoyou.common.supcan.treelist.cols.Group</value>
 							</list>
 						</property>
 					</bean>
@@ -94,7 +94,7 @@
 	</bean>
 
 	<!-- 注解扫描包 -->
-	<context:component-scan base-package="com.yhl.laoyou" />
+	<context:component-scan base-package="com.beauty.laoyou" />
 
 	<!-- 开启注解 -->
 	<mvc:annotation-driven/>

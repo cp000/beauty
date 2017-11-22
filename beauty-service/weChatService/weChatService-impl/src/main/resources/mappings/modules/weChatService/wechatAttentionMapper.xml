@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.beauty.modules.weChatService.dao.WechatAttentionDao" >
-  <resultMap id="BaseResultMap" type="com.beauty.modules.weChatService.entity.WechatAttention" >
+<mapper namespace="com.meixiang.beauty.modules.weChat.dao.WechatAttentionDao" >
+  <resultMap id="BaseResultMap" type="com.meixiang.beauty.modules.weChat.entity.WechatAttention" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="openid" property="openid" jdbcType="VARCHAR" />
     <result column="marketer" property="marketer" jdbcType="VARCHAR" />

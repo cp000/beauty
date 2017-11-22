@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.beauty.modules.healthDataService.dao.DeviceDao">
+<mapper namespace="com.meixiang.beauty.modules.healthData.dao.DeviceDao">
 
-    <insert id="addDevice" parameterType="com.yhl.laoyou.common.dto.hospital.DeviceDTO" useGeneratedKeys="true"
+    <insert id="addDevice" parameterType="com.beauty.laoyou.common.dto.hospital.DeviceDTO" useGeneratedKeys="true"
             keyProperty="id">
         insert into sys_device (name, type,
         deviceId, remarks,memberId,userName,isDel)
@@ -10,7 +10,7 @@
         #{deviceId,jdbcType=VARCHAR}, #{remarks,jdbcType=TIMESTAMP} ,#{memberId,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},0)
     </insert>
 
-    <update id="updateDevice" parameterType="com.yhl.laoyou.common.dto.hospital.DeviceDTO">
+    <update id="updateDevice" parameterType="com.beauty.laoyou.common.dto.hospital.DeviceDTO">
         update sys_device
         <set>
             <if test="name != null">

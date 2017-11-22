@@ -90,7 +90,7 @@
 		<property name="filters" value="stat" />
 	</bean>
 
-	<bean id="dataSource" class="com.yhl.laoyou.common.dataSource.DataSource">
+	<bean id="dataSource" class="com.beauty.laoyou.common.dataSource.DataSource">
 		<property name="targetDataSources">
 			<map key-type="java.lang.String">
 				<entry value-ref="readDataSource" key="READ"></entry>
@@ -110,8 +110,8 @@
 	<!-- 创建SqlSessionFactory，同时指定数据源和mapper -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="typeAliasesPackage" value="com.yhl.laoyou"/>
-		<property name="typeAliasesSuperType" value="com.yhl.laoyou.common.persistence.BaseEntity"/>
+		<property name="typeAliasesPackage" value="com.beauty.laoyou"/>
+		<property name="typeAliasesSuperType" value="com.beauty.laoyou.common.persistence.BaseEntity"/>
 		<property name="mapperLocations" value="classpath*:/mappings/**/*.xml"/>
 		<property name="configLocation" value="classpath:/mybatis-config.xml"></property>
 	</bean>
@@ -122,8 +122,8 @@
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-		<property name="basePackage" value="com.yhl.laoyou"/>
-		<property name="annotationClass" value="com.yhl.laoyou.common.persistence.annotation.MyBatisDao"/>
+		<property name="basePackage" value="com.beauty.laoyou"/>
+		<property name="annotationClass" value="com.beauty.laoyou.common.persistence.annotation.MyBatisDao"/>
 	</bean>
 
 	<!-- 配置 JSR303 Bean Validator 定义 -->

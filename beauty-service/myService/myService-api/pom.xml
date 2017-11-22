@@ -2,13 +2,13 @@
   <modelVersion>4.0.0</modelVersion>
     <dependencies>
         <dependency>
-            <groupId>com.yhl</groupId>
-            <artifactId>laoyou-common</artifactId>
+            <groupId>com.meixiang</groupId>
+            <artifactId>beauty-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
     <parent>
-    <groupId>com.yhl</groupId>
+    <groupId>com.meixiang</groupId>
     <artifactId>myService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
