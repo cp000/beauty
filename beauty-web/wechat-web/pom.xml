@@ -9,15 +9,15 @@
         <relativePath>../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>health-web</artifactId>
+    <artifactId>wechat-web</artifactId>
 
-    <name>health-web</name>
+    <name>wechat-web</name>
 
     <dependencies>
 
         <dependency>
             <groupId>com.meixiang</groupId>
-            <artifactId>common-web</artifactId>
+            <artifactId>system-web</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
@@ -50,6 +50,7 @@
             <artifactId>healthDataService-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <groupId>com.meixiang</groupId>
             <artifactId>healthDataService-impl</artifactId>

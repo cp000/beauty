@@ -7,9 +7,9 @@
       <relativePath>../../pom.xml</relativePath>
   </parent>
 
-    <artifactId>common-web</artifactId>
+    <artifactId>system-web</artifactId>
 
-    <name>common-web</name>
+    <name>system-web</name>
 
     <dependencies>
     	<dependency> 

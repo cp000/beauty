@@ -956,17 +956,6 @@
 		</plugins>
 	</build>
 
-	<!-- 开发者信息 -->
-	<developers>
-		<developer>
-			<id>thinkgem</id>
-			<name>WangZhen</name>
-			<email>thinkgem at 163.com</email>
-			<roles><role>Project lead</role></roles>
-			<timezone>+8</timezone>
-		</developer>
-	</developers>
-
 	<modules>
 		<module>beauty-common</module>
 
@@ -975,10 +964,14 @@
 		<module>beauty-service/myService</module>
 		<module>beauty-service/activityService</module>
 		<module>beauty-service/courseService</module>
-		<module>beauty-service/weChatService</module>
+		<module>beauty-service/wechatService</module>
 
-		<module>beauty-web/common-web</module>
-		<module>beauty-web/health-web</module>
+		<module>beauty-web/system-web</module>
+		<module>beauty-web/product-web</module>
+		<module>beauty-web/wechat-web</module>
+		<module>beauty-web/account-web</module>
+		<module>beauty-web/transaction-web</module>
+		<module>beauty-web/agents-web</module>
 
 		<module>beauty-project/business</module>
 		<module>beauty-project/management</module>
