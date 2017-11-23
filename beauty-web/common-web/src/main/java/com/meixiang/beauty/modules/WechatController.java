@@ -1,7 +1,7 @@
 package com.meixiang.beauty.modules;
 
 import com.meixiang.beauty.common.utils.SignUtil;
-import com.meixiang.beauty.modules.weChat.service.WechatCoreService;
+import com.meixiang.beauty.modules.wechat.service.WechatCoreService;
 import com.meixiang.beauty.sys.annotation.LoginRequired;
 import com.meixiang.beauty.sys.entity.User;
 import com.meixiang.beauty.sys.service.UserService;
