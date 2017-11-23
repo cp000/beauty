@@ -1,10 +1,10 @@
 package com.meixiang.beauty.modules.wechat.service.impl;
 
-import com.cxqm.xiaoerke.modules.wechat.dao.WechatAttentionDao;
-import com.cxqm.xiaoerke.modules.wechat.entity.DoctorAttentionVo;
-import com.cxqm.xiaoerke.modules.wechat.entity.SysWechatAppintInfoVo;
-import com.cxqm.xiaoerke.modules.wechat.entity.WechatAttention;
-import com.cxqm.xiaoerke.modules.wechat.service.WechatAttentionService;
+import com.meixiang.beauty.modules.wechat.dao.WechatAttentionDao;
+import com.meixiang.beauty.modules.wechat.entity.DoctorAttentionVo;
+import com.meixiang.beauty.modules.wechat.entity.SysWechatAppintInfoVo;
+import com.meixiang.beauty.modules.wechat.entity.WechatAttention;
+import com.meixiang.beauty.modules.wechat.service.WechatAttentionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,8 +24,8 @@ public class WechatAttentionServiceImpl implements WechatAttentionService {
    @Autowired
 	private WechatAttentionDao wechatattentionDao;
 	 
-	   //根据openId查询关注信息
-	 @Override
+    //根据openId查询关注信息
+    @Override
     public SysWechatAppintInfoVo findAttentionInfoByOpenId(SysWechatAppintInfoVo sysWechatAppintInfoVo) {
          List<SysWechatAppintInfoVo> resultVo = wechatattentionDao.findAttentionInfoByOpenId(sysWechatAppintInfoVo);
          SysWechatAppintInfoVo wechatAppintInfoVo = new SysWechatAppintInfoVo();

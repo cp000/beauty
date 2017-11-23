@@ -1,9 +1,9 @@
 package com.meixiang.beauty.modules.wechat.service.impl.util;
 
-import com.cxqm.xiaoerke.modules.sys.entity.Article;
-import com.cxqm.xiaoerke.modules.sys.entity.MusicMessage;
-import com.cxqm.xiaoerke.modules.sys.entity.NewsMessage;
-import com.cxqm.xiaoerke.modules.sys.entity.TextMessage;
+import com.meixiang.beauty.sys.entity.Article;
+import com.meixiang.beauty.sys.entity.MusicMessage;
+import com.meixiang.beauty.sys.entity.NewsMessage;
+import com.meixiang.beauty.sys.entity.TextMessage;
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.core.util.QuickWriter;
 import com.thoughtworks.xstream.io.HierarchicalStreamWriter;
@@ -12,7 +12,6 @@ import com.thoughtworks.xstream.io.xml.XppDriver;
 import org.dom4j.Document;
 import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
-
 import javax.servlet.http.HttpServletRequest;
 import java.io.InputStream;
 import java.io.Writer;

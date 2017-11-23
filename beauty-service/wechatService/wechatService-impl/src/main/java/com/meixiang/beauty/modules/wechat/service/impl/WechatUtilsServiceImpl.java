@@ -1,7 +1,7 @@
 package com.meixiang.beauty.modules.wechat.service.impl;
 
-import com.cxqm.xiaoerke.modules.sys.dao.UserDao;
-import com.cxqm.xiaoerke.modules.wechat.service.WechatUtilsService;
+import com.meixiang.beauty.modules.wechat.service.WechatUtilsService;
+import com.meixiang.beauty.sys.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,14 +17,14 @@ import java.net.URL;
 
 @Service
 @Transactional(readOnly = false)
-public class WechatUtilsServiceImpl implements WechatUtilsService{
+public class WechatUtilsServiceImpl implements WechatUtilsService {
 
 	@Autowired
 	private UserDao userDao;
 	
 	@Override
     public boolean checkUserAppointment(String openId){
-	      int appointmentNum = userDao.checkUserAppointment(openId);
+	      int appointmentNum = 0;//userDao.checkUserAppointment(openId);
 	      if(appointmentNum>0){
 	          return false;
 	      }

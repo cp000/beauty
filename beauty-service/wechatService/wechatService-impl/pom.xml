@@ -3,20 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>weChatService</artifactId>
+        <artifactId>wechatService</artifactId>
         <groupId>com.meixiang</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>weChatService-impl</artifactId>
-    <name>weChatService-impl</name>
-    <description>weChatService-impl</description>
+    <artifactId>wechatService-impl</artifactId>
+    <name>wechatService-impl</name>
+    <description>wechatService-impl</description>
 
     <dependencies>
         <dependency>
             <groupId>com.meixiang</groupId>
-            <artifactId>weChatService-api</artifactId>
+            <artifactId>wechatService-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

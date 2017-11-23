@@ -2,7 +2,7 @@ package com.meixiang.beauty.modules;
 
 import com.meixiang.beauty.common.utils.SignUtil;
 import com.meixiang.beauty.common.web.BaseController;
-import com.meixiang.beauty.modules.weChat.service.WechatCoreService;
+import com.meixiang.beauty.modules.wechat.service.WechatCoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

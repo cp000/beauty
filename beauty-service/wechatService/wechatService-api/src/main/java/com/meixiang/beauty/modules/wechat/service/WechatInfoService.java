@@ -1,14 +1,14 @@
 package com.meixiang.beauty.modules.wechat.service;
 
-import com.cxqm.xiaoerke.common.bean.CustomBean;
-import com.cxqm.xiaoerke.modules.wechat.entity.UserQRCode;
+import com.meixiang.beauty.common.bean.CustomBean;
+import com.meixiang.beauty.modules.wechat.entity.UserQRCode;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public interface WeChatInfoService {
+public interface WechatInfoService {
 
 	
 	/**

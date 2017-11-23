@@ -1,10 +1,9 @@
 package com.meixiang.beauty.modules.wechat.service.impl;
 
 import com.meixiang.beauty.common.utils.*;
-import com.meixiang.beauty.modules.weChat.entity.WechatAttention;
-import com.meixiang.beauty.modules.weChat.service.WechatCoreService;
 import com.meixiang.beauty.modules.wechat.dao.WechatAttentionDao;
 import com.meixiang.beauty.modules.wechat.dao.WechatInfoDao;
+import com.meixiang.beauty.modules.wechat.service.WechatCoreService;
 import com.meixiang.beauty.modules.wechat.service.util.MessageUtil;
 import com.meixiang.beauty.modules.my.dao.SurveyDao;
 import com.meixiang.beauty.modules.wechat.dao.WechatUserBindDao;
@@ -105,12 +104,12 @@ public class WechatCoreServiceImpl implements WechatCoreService {
         updateTimeMap.put("openId",openId);
         updateTimeMap.put("updateTime", updateDate);
         updateTimeMap.put("doctorMarketer", marketer);
-        wechatAttentionDao.updateAttentionInfo(updateTimeMap);
+        //wechatAttentionDao.updateAttentionInfo(updateTimeMap);
     }
 
     private String processSubscribeEvent(ReceiveXmlEntity xmlEntity,HttpServletRequest request,HttpServletResponse response)
     {
-        Map parameter = wechatInfoDao.getWechatParameter();
+        Map parameter = null;//wechatInfoDao.getWechatParameter();
         String token = (String) parameter.get("token");
         String EventKey = xmlEntity.getEventKey();
         String marketer = "";
@@ -141,7 +140,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
         else {
             map.put("ispay",1);
         }*/
-        wechatAttentionDao.insertAttentionInfo(map);
+        //wechatAttentionDao.insertAttentionInfo(map);
 
     }
 
@@ -178,13 +177,13 @@ public class WechatCoreServiceImpl implements WechatCoreService {
         String openId = xmlEntity.getFromUserName();
         map.put("openId", openId);
         //根据openid查询最近关注的marketer，防止取消关注的时候marketer总是为空
-        WechatAttention wechatAttention = new WechatAttention();
-        wechatAttention.setOpenid(openId);
-        wechatAttention = wechatAttentionDao.findMarketerByOpeinid(wechatAttention);
-        map.put("marketer", wechatAttention.getMarketer());
-        map.put("status", "1");
-        map.put("updateTime", new Date());
-        wechatAttentionDao.insertAttentionInfo(map);
+//        WechatAttention wechatAttention = new WechatAttention();
+//        wechatAttention.setOpenid(openId);
+//        wechatAttention = wechatAttentionDao.findMarketerByOpeinid(wechatAttention);
+//        map.put("marketer", wechatAttention.getMarketer());
+//        map.put("status", "1");
+//        map.put("updateTime", new Date());
+//        wechatAttentionDao.insertAttentionInfo(map);
 
     }
 
@@ -208,7 +207,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
             HttpSession session = request.getSession();
             session.setAttribute("openId",xmlEntity.getFromUserName());
             LogUtils.saveLog(request,"00000003");//注：参数含义请参照sys_log_mapping表，如00000003表示“咨询医生消息推送”
-            Map parameter = wechatInfoDao.getWechatParameter();
+            Map parameter = null;//wechatInfoDao.getWechatParameter();
             String token = (String) parameter.get("token");
             List<Article> articleList = new ArrayList<Article>();
             Article article = new Article();
@@ -296,7 +295,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
      */
     @Override
     public String getUserQRCode(String info) {
-        Map<String,Object> parameter = wechatInfoDao.getWechatParameter();
+        Map<String,Object> parameter = null;//wechatInfoDao.getWechatParameter();
         String token = (String)parameter.get("token");
         String url= "https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="+token;
         String jsonData="{\"expire_seconds\": 604800, \"action_name\": \"QR_STR_SCENE\",\"action_info\": {\"scene\": {\"scene_str\"" + ":\"" + info + "\"}}}";
@@ -320,7 +319,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
                 map.put("ticket", ticket);
                 map.put("id", "1");
 
-                wechatInfoDao.updateWechatParameter(map);
+                //wechatInfoDao.updateWechatParameter(map);
                 //sessionRedisCache.putWeChatParamToRedis(map);
             }
         } catch (Exception e) {

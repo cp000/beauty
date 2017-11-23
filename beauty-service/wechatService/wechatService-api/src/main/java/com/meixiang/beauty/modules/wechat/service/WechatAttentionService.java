@@ -1,9 +1,8 @@
 package com.meixiang.beauty.modules.wechat.service;
 
-
-import com.cxqm.xiaoerke.modules.wechat.entity.DoctorAttentionVo;
-import com.cxqm.xiaoerke.modules.wechat.entity.SysWechatAppintInfoVo;
-import com.cxqm.xiaoerke.modules.wechat.entity.WechatAttention;
+import com.meixiang.beauty.modules.wechat.entity.DoctorAttentionVo;
+import com.meixiang.beauty.modules.wechat.entity.SysWechatAppintInfoVo;
+import com.meixiang.beauty.modules.wechat.entity.WechatAttention;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,8 +19,7 @@ import java.util.List;
 @Transactional(readOnly = false)
 public interface WechatAttentionService {
 
-	SysWechatAppintInfoVo findAttentionInfoByOpenId(
-            SysWechatAppintInfoVo sysWechatAppintInfoVo);
+	SysWechatAppintInfoVo findAttentionInfoByOpenId(SysWechatAppintInfoVo sysWechatAppintInfoVo);
 
 	SysWechatAppintInfoVo getAttentionInfoByOpenId(SysWechatAppintInfoVo sysWechatAppintInfoVo);
 
@@ -31,8 +29,7 @@ public interface WechatAttentionService {
 
 	WechatAttention getAttentionByOpenId(String open_id);
 
-	List<SysWechatAppintInfoVo> findAttentionInfoByOpenIdLists(
-            SysWechatAppintInfoVo sysWechatAppintInfoVo);
+	List<SysWechatAppintInfoVo> findAttentionInfoByOpenIdLists(SysWechatAppintInfoVo sysWechatAppintInfoVo);
 
 	DoctorAttentionVo findDoctorAttentionVoInfoNoOpenId(HashMap<String, Object> hashMap);
 

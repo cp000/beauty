@@ -1,11 +1,11 @@
 package com.meixiang.beauty.modules.wechat.service.impl;
 
-import com.cxqm.xiaoerke.common.bean.CustomBean;
-import com.cxqm.xiaoerke.modules.sys.service.SystemService;
-import com.cxqm.xiaoerke.modules.wechat.dao.UserQRCodeDao;
-import com.cxqm.xiaoerke.modules.wechat.dao.WechatInfoDao;
-import com.cxqm.xiaoerke.modules.wechat.entity.UserQRCode;
-import com.cxqm.xiaoerke.modules.wechat.service.WeChatInfoService;
+import com.meixiang.beauty.common.bean.CustomBean;
+import com.meixiang.beauty.modules.wechat.dao.UserQRCodeDao;
+import com.meixiang.beauty.modules.wechat.dao.WechatInfoDao;
+import com.meixiang.beauty.modules.wechat.entity.UserQRCode;
+import com.meixiang.beauty.modules.wechat.service.WechatInfoService;
+import com.meixiang.beauty.sys.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 @Service
 @Transactional(readOnly = false)
-public class WeChatServiceImpl implements WeChatInfoService {
+public class WechatServiceImpl implements WechatInfoService {
 	
 	@Autowired
 	private UserQRCodeDao ucd;
