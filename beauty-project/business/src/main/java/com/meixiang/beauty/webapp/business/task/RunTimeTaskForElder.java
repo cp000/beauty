@@ -1,8 +1,8 @@
 package com.meixiang.beauty.webapp.business.task;
 
-import com.meixiang.beauty.modules.healthData.service.HealthDataService;
-import com.meixiang.beauty.modules.my.service.SurveyService;
-import com.meixiang.beauty.modules.wechat.service.WechatCoreService;
+import com.meixiang.beauty.modules.account.HealthDataService;
+import com.meixiang.beauty.modules.transaction.api.SurveyService;
+import com.meixiang.beauty.modules.training.api.WechatCoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**

@@ -14,7 +14,6 @@
 			classpath*:/spring-context-mysql.xml
 			classpath*:/spring-context-redis.xml
 			classpath*:/spring-context-mongodb.xml
-			classpath*:/spring-security.xml
 		</param-value>
 	</context-param>
 

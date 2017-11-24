@@ -12,65 +12,25 @@
     <name>system-web</name>
 
     <dependencies>
-    	<dependency> 
-           <groupId>com.meixiang</groupId>
-           <artifactId>beauty-common</artifactId>
-           <version>0.0.1-SNAPSHOT</version>
-        </dependency>
 
         <dependency>
             <groupId>com.meixiang</groupId>
-            <artifactId>healthService-api</artifactId>
+            <artifactId>beauty-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.meixiang</groupId>
-            <artifactId>healthService-impl</artifactId>
+            <artifactId>systemService-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>com.meixiang</groupId>
-            <artifactId>myService-api</artifactId>
+            <artifactId>systemService-impl</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.meixiang</groupId>
-            <artifactId>myService-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meixiang</groupId>
-            <artifactId>healthDataService-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meixiang</groupId>
-            <artifactId>healthDataService-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meixiang</groupId>
-            <artifactId>activityService-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meixiang</groupId>
-            <artifactId>activityService-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.meixiang</groupId>
-            <artifactId>weChatService-impl</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 
 </project>

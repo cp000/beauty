@@ -959,19 +959,21 @@
 	<modules>
 		<module>beauty-common</module>
 
-		<module>beauty-service/healthDataService</module>
-		<module>beauty-service/healthService</module>
-		<module>beauty-service/myService</module>
-		<module>beauty-service/activityService</module>
-		<module>beauty-service/courseService</module>
 		<module>beauty-service/wechatService</module>
+		<module>beauty-service/transactionService</module>
+		<module>beauty-service/trainingService</module>
+		<module>beauty-service/systemService</module>
+		<module>beauty-service/productService</module>
+		<module>beauty-service/agentsService</module>
+		<module>beauty-service/accountService</module>
 
+		<module>beauty-web/wechat-web</module>
+		<module>beauty-web/transaction-web</module>
+		<module>beauty-web/training-web</module>
 		<module>beauty-web/system-web</module>
 		<module>beauty-web/product-web</module>
-		<module>beauty-web/wechat-web</module>
-		<module>beauty-web/account-web</module>
-		<module>beauty-web/transaction-web</module>
 		<module>beauty-web/agents-web</module>
+		<module>beauty-web/account-web</module>
 
 		<module>beauty-project/business</module>
 		<module>beauty-project/management</module>
