@@ -2,11 +2,7 @@ package com.meixiang.beauty.web.system.controller;
 
 import com.meixiang.beauty.common.constant.StatusConstant;
 import com.meixiang.beauty.common.dto.ResponseDTO;
-import com.meixiang.beauty.common.dto.elder.RelativeElderDTO;
-import com.meixiang.beauty.common.dto.practitioner.Settings.SysPractitionerUserDTO;
 import com.meixiang.beauty.common.dto.practitioner.Settings.UserInfoDTO;
-import com.meixiang.beauty.modules.system.HealthArchive;
-import com.meixiang.beauty.modules.transaction.api.SysPractitionerUserService;
 import com.meixiang.beauty.sys.annotation.LoginRequired;
 import com.meixiang.beauty.sys.entity.User;
 import com.meixiang.beauty.sys.service.EasemobService;
@@ -18,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Lock;
@@ -42,14 +36,7 @@ public class InfoController {
     private UserService userService;
 
     @Autowired
-    private SysPractitionerUserService sysPractitionerUserService;
-
-    @Autowired
     private EasemobService easemobService;
-
-    @Autowired
-    HealthArchive healthArchive;
-
 
     /**
      * 修改用户头像;
@@ -165,84 +152,6 @@ public class InfoController {
         }
     }
 
-    /**
-     * 修改用户科室
-     *
-     *
-     */
-    @RequestMapping(value = "laoyou/updateUserDepartment", method = {RequestMethod.POST, RequestMethod.GET})
-    @LoginRequired
-    public
-    @ResponseBody
-    ResponseDTO<UserInfoDTO> updateUserDepartment(@RequestBody UserInfoDTO userInfoDto,HttpServletRequest request) {
-        User user=UserService.getUser(request);
-        SysPractitionerUserDTO sysPractitionerUser=user.getSysPractitionerUser();
-        sysPractitionerUser.setDepartment(userInfoDto.getDepartment());
-        ResponseDTO<UserInfoDTO> responseDto=new ResponseDTO<>();
-        if (sysPractitionerUserService.updateSysPractitionerUser(sysPractitionerUser)>0){
-            userService.updateRedisUser(request);
-            responseDto.setResult(StatusConstant.SUCCESS);
-            responseDto.setErrorInfo("");
-            return responseDto;
-        }else {
-            responseDto.setResult(StatusConstant.FAILURE);
-            responseDto.setErrorInfo("");
-            return responseDto;
-        }
-    }
-
-
-    /**
-     * 修改用户职称
-     *
-     *
-     */
-    @RequestMapping(value = "laoyou/updateUserTitle", method = {RequestMethod.POST, RequestMethod.GET})
-    @LoginRequired
-    public
-    @ResponseBody
-    ResponseDTO<UserInfoDTO> updateUserTitle(@RequestBody UserInfoDTO userInfoDto,HttpServletRequest request) {
-        User user=UserService.getUser(request);
-        SysPractitionerUserDTO sysPractitionerUser=user.getSysPractitionerUser();
-        sysPractitionerUser.setTitle(userInfoDto.getTitle());
-        ResponseDTO<UserInfoDTO> responseDto=new ResponseDTO<>();
-        if (sysPractitionerUserService.updateSysPractitionerUser(sysPractitionerUser)>0){
-            userService.updateRedisUser(request);
-            responseDto.setResult(StatusConstant.SUCCESS);
-            responseDto.setErrorInfo("");
-            return responseDto;
-        }else {
-            responseDto.setResult(StatusConstant.FAILURE);
-            responseDto.setErrorInfo("");
-            return responseDto;
-        }
-    }
-
-    /**
-     * 修改用户医院
-     *
-     *
-     */
-    @RequestMapping(value = "laoyou/updateUserHospitalName", method = {RequestMethod.POST, RequestMethod.GET})
-    @LoginRequired
-    public
-    @ResponseBody
-    ResponseDTO<UserInfoDTO> updateUserHospitalName(@RequestBody UserInfoDTO userInfoDto,HttpServletRequest request) {
-        User user=UserService.getUser(request);
-        SysPractitionerUserDTO sysPractitionerUser=user.getSysPractitionerUser();
-        sysPractitionerUser.setHospitalName(userInfoDto.getHospitalName());
-        ResponseDTO<UserInfoDTO> responseDto=new ResponseDTO<>();
-        if (sysPractitionerUserService.updateSysPractitionerUser(sysPractitionerUser)>0){
-            userService.updateRedisUser(request);
-            responseDto.setResult(StatusConstant.SUCCESS);
-            responseDto.setErrorInfo("成功");
-            return responseDto;
-        }else {
-            responseDto.setResult(StatusConstant.FAILURE);
-            responseDto.setErrorInfo("失败");
-            return responseDto;
-        }
-    }
 
     /**
      * 获取用户信息
@@ -259,29 +168,6 @@ public class InfoController {
         responseDto.setResponseData(user);
         responseDto.setResult(StatusConstant.SUCCESS);
         return responseDto;
-    }
-
-    /**
-     * 获取用户所有的亲友圈中亲友的信息
-     * @return
-     */
-    @RequestMapping(value = "laoyou/relativeElderInfo", method = {RequestMethod.POST, RequestMethod.GET})
-    @LoginRequired
-    public
-    @ResponseBody
-    ResponseDTO<List<RelativeElderDTO>> relativeElderInfo(HttpServletRequest request) {
-
-        ResponseDTO<List<RelativeElderDTO>> responseDTO = new ResponseDTO<>();
-
-        /**
-         *
-         * 获取用户所有的亲友圈中亲友的信息，将用户的亲友圈的亲友信息放入RelativeElderDTO中
-         *
-         * */
-        List<RelativeElderDTO> elderInfoList = new ArrayList<>();
-        responseDTO.setResponseData(healthArchive.getRelativeList(UserService.getUser(request)));
-        responseDTO.setResult(StatusConstant.SUCCESS);
-        return responseDTO;
     }
 
 }

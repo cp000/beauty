@@ -1,7 +1,7 @@
 package com.meixiang.beauty.modules.wechat.dao;
 
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
-import com.meixiang.beauty.modules.training.entity.UserQRCode;
+import com.meixiang.beauty.modules.wechat.entity.UserQRCode;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;

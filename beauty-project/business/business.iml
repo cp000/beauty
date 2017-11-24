@@ -45,18 +45,14 @@
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-live:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.2" level="project" />
     <orderEntry type="module" module-name="system-web" />
-    <orderEntry type="library" name="Maven: com.meixiang:healthService-api:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.meixiang:healthService-impl:0.0.1-SNAPSHOT" level="project" />
+    <orderEntry type="module" module-name="systemService-api" />
+    <orderEntry type="module" module-name="systemService-impl" />
     <orderEntry type="library" name="Maven: org.checkerframework:jdk7:1.9.1" level="project" />
-    <orderEntry type="module" module-name="transactionService-api" />
-    <orderEntry type="module" module-name="transactionService-impl" />
-    <orderEntry type="library" name="Maven: com.meixiang:healthDataService-api:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.meixiang:healthDataService-impl:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.meixiang:activityService-api:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.meixiang:activityService-impl:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.meixiang:weChatService-impl:0.0.1-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.meixiang:wechatService-api:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="product-web" />
+    <orderEntry type="module" module-name="productService-api" />
+    <orderEntry type="module" module-name="productService-impl" />
+    <orderEntry type="module" module-name="wechatService-api" />
+    <orderEntry type="module" module-name="wechatService-impl" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.0.8.RELEASE" level="project" />

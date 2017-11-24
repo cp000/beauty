@@ -1,10 +1,10 @@
 package com.meixiang.beauty.modules.training.impl;
 
 import com.meixiang.beauty.common.bean.CustomBean;
+import com.meixiang.beauty.modules.training.api.WechatInfoService;
 import com.meixiang.beauty.modules.training.dao.UserQRCodeDao;
 import com.meixiang.beauty.modules.training.dao.WechatInfoDao;
-import com.meixiang.beauty.modules.wechat.entity.UserQRCode;
-import com.meixiang.beauty.modules.wechat.service.WechatInfoService;
+import com.meixiang.beauty.modules.training.entity.UserQRCode;
 import com.meixiang.beauty.sys.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

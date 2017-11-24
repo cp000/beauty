@@ -4,7 +4,7 @@ package com.meixiang.beauty.modules.system.impl;
 import com.meixiang.beauty.common.dto.practitioner.healthService.MedicationPlanDTO;
 import com.meixiang.beauty.common.dto.practitioner.healthService.MedicationPlanTimingDTO;
 import com.meixiang.beauty.common.utils.ConstantUtil;
-import com.meixiang.beauty.modules.system.MedicationPlanService;
+import com.meixiang.beauty.modules.system.api.MedicationPlanService;
 import com.meixiang.beauty.sys.service.EasemobService;
 import com.meixiang.beauty.sys.service.UserService;
 import com.meixiang.beauty.sys.utils.UUIDUtil;

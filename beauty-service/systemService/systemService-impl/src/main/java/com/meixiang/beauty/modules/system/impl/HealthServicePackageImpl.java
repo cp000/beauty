@@ -8,7 +8,7 @@ import com.meixiang.beauty.common.dto.practitioner.healthServicePackage.HealthSe
 import com.meixiang.beauty.common.dto.practitioner.healthServicePackage.HealthServicePackageTemplateDTO;
 import com.meixiang.beauty.common.dto.practitioner.member.MemberDTO;
 import com.meixiang.beauty.common.utils.TimeUtils;
-import com.meixiang.beauty.modules.system.HealthServicePackage;
+import com.meixiang.beauty.modules.system.api.HealthServicePackage;
 import com.meixiang.beauty.sys.dao.SysHospitalUserDao;
 import com.meixiang.beauty.sys.entity.EasemobGroup;
 import com.meixiang.beauty.sys.entity.PaginationVo;

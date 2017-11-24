@@ -2,8 +2,7 @@ package com.meixiang.beauty.modules.wechat.dao;
 
 
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
-import com.meixiang.beauty.modules.training.entity.WechatUserBind;
-
+import com.meixiang.beauty.modules.wechat.entity.WechatUserBind;
 import java.util.List;
 
 /**

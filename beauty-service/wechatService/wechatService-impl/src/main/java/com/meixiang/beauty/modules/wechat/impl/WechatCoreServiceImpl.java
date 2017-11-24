@@ -1,11 +1,10 @@
 package com.meixiang.beauty.modules.wechat.impl;
 
 import com.meixiang.beauty.common.utils.*;
+import com.meixiang.beauty.modules.wechat.api.WechatCoreService;
 import com.meixiang.beauty.modules.wechat.dao.WechatAttentionDao;
 import com.meixiang.beauty.modules.wechat.dao.WechatInfoDao;
-import com.meixiang.beauty.modules.training.api.WechatCoreService;
 import com.meixiang.beauty.modules.wechat.util.MessageUtil;
-import com.meixiang.beauty.modules.transaction.dao.SurveyDao;
 import com.meixiang.beauty.modules.wechat.dao.WechatUserBindDao;
 import com.meixiang.beauty.sys.entity.*;
 import com.meixiang.beauty.sys.utils.LogUtils;
@@ -37,9 +36,6 @@ public class WechatCoreServiceImpl implements WechatCoreService {
 
     @Autowired
     WechatUserBindDao wechatUserBindDao;
-
-    @Autowired
-    SurveyDao surveyDao;
 
     @Override
     public String processWechatRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -266,14 +262,6 @@ public class WechatCoreServiceImpl implements WechatCoreService {
             textMessage.setContent("尊敬");
             return MessageUtil.textMessageToXml(textMessage);
 
-        }else if(EventKey.indexOf("FTQWJ")>-1){//丰台区问卷
-            article.setTitle("感谢您参与我国老人摸底调查");
-            int answerUserNum = surveyDao.getAnswerUserNum();
-            article.setDescription("敬爱的老年朋友，非常感谢您积极配合政府进行问卷调查。参与本次调研的老年朋友已有" + answerUserNum + "人。\n" +
-                    "本次调研由北京市丰台区民政局发起，华录老友受委托完成。华录老友会持续为您带来优质体验和服务。");
-            article.setPicUrl("");
-            article.setUrl("");
-            articleList.add(article);
         }
 
         if(articleList.size() == 0){

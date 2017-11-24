@@ -16,7 +16,7 @@
 				   queue-capacity="500" rejection-policy="CALLER_RUNS" />
 	<task:annotation-driven executor="executor" scheduler="scheduler" />
 
-	<bean id="scheduledQuarz" class="com.meixiang.beauty.webapp.business.task.RunTimeTaskForElder" />
+	<bean id="scheduledQuarz" class="com.meixiang.beauty.webapp.business.task.RunTimeTaskForBusiness" />
 
 	<!--==========================================webapp部分================================================-->
 

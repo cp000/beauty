@@ -1,9 +1,9 @@
 package com.meixiang.beauty.modules.training.dao;
 
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
-import com.meixiang.beauty.modules.wechat.entity.DoctorAttentionVo;
-import com.meixiang.beauty.modules.wechat.entity.SysWechatAppintInfoVo;
-import com.meixiang.beauty.modules.wechat.entity.WechatAttention;
+import com.meixiang.beauty.modules.training.entity.DoctorAttentionVo;
+import com.meixiang.beauty.modules.training.entity.SysWechatAppintInfoVo;
+import com.meixiang.beauty.modules.training.entity.WechatAttention;
 
 import java.util.HashMap;
 import java.util.List;

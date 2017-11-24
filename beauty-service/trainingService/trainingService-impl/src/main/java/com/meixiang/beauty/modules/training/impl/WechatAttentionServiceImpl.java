@@ -1,10 +1,10 @@
 package com.meixiang.beauty.modules.training.impl;
 
+import com.meixiang.beauty.modules.training.api.WechatAttentionService;
 import com.meixiang.beauty.modules.training.dao.WechatAttentionDao;
-import com.meixiang.beauty.modules.wechat.entity.DoctorAttentionVo;
-import com.meixiang.beauty.modules.wechat.entity.SysWechatAppintInfoVo;
-import com.meixiang.beauty.modules.wechat.entity.WechatAttention;
-import com.meixiang.beauty.modules.wechat.service.WechatAttentionService;
+import com.meixiang.beauty.modules.training.entity.DoctorAttentionVo;
+import com.meixiang.beauty.modules.training.entity.SysWechatAppintInfoVo;
+import com.meixiang.beauty.modules.training.entity.WechatAttention;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

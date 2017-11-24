@@ -1,4 +1,4 @@
-package com.meixiang.beauty.modules.product.service;
+package com.meixiang.beauty.modules.product.api;
 
 import com.meixiang.beauty.common.dto.activity.ActivityDTO;
 import com.meixiang.beauty.common.dto.activity.ActivityDiscussDTO;

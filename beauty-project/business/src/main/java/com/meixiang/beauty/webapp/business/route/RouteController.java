@@ -19,21 +19,6 @@ import javax.servlet.http.HttpServletResponse;
 public class RouteController extends BaseController {
 
 
-    /*
-        elder 项目
-    */
-    @RequestMapping(value ="",method = {RequestMethod.POST, RequestMethod.GET})
-    public String elder(HttpServletResponse response) {
-        response.addHeader("Pragma","no-cache");
-        response.setHeader("Cache-Control","no-cache");
-        response.setHeader("Expires","0");
-        //return "angular/elderIndex";
-        return "angular/elderIonicIndex";
-    }
-
-    /*
-        elder 项目
-    */
     @RequestMapping(value ="native",method = {RequestMethod.POST, RequestMethod.GET})
     public String elderNative(HttpServletResponse response) {
         response.addHeader("Pragma","no-cache");
@@ -42,9 +27,6 @@ public class RouteController extends BaseController {
         return "native/elderFirstPage";
     }
 
-    /*
-        elder ionic框架
-    */
     @RequestMapping(value ="ionic",method = {RequestMethod.POST, RequestMethod.GET})
     public String elderIonic(HttpServletResponse response) {
         response.addHeader("Pragma","no-cache");
@@ -62,28 +44,6 @@ public class RouteController extends BaseController {
         response.setHeader("Cache-Control","no-cache");
         response.setHeader("Expires","0");
         return "native/login";
-    }
-
-    /*
-     elder ionic框架
-    */
-    @RequestMapping(value ="surveyLogin",method = {RequestMethod.POST, RequestMethod.GET})
-    public String surveyLogin(HttpServletResponse response) {
-        response.addHeader("Pragma","no-cache");
-        response.setHeader("Cache-Control","no-cache");
-        response.setHeader("Expires","0");
-        return "native/surveyLogin";
-    }
-
-    /*
- elder ionic框架
-*/
-    @RequestMapping(value ="aboutUs",method = {RequestMethod.POST, RequestMethod.GET})
-    public String aboutUs(HttpServletResponse response) {
-        response.addHeader("Pragma","no-cache");
-        response.setHeader("Cache-Control","no-cache");
-        response.setHeader("Expires","0");
-        return "native/weChatCompany";
     }
 
 }

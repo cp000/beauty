@@ -1,7 +1,7 @@
 package com.meixiang.beauty.modules.training.dao;
 
 
-import com.meixiang.beauty.modules.wechat.entity.HealthRecordMsgVo;
+import com.meixiang.beauty.modules.training.entity.HealthRecordMsgVo;
 
 public interface HealthRecordMsgDao {
     int deleteByPrimaryKey(Long id);

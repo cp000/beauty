@@ -12,7 +12,7 @@ import com.meixiang.beauty.common.utils.DateUtils;
 import com.meixiang.beauty.common.utils.Encodes;
 import com.meixiang.beauty.common.utils.TimeUtils;
 import com.meixiang.beauty.common.utils.excel.ImportExcel;
-import com.meixiang.beauty.modules.system.HealthArchive;
+import com.meixiang.beauty.modules.system.api.HealthArchive;
 import com.meixiang.beauty.sys.dao.EasemobGroupDao;
 import com.meixiang.beauty.sys.dao.SysElderUserDao;
 import com.meixiang.beauty.sys.dao.UserDao;

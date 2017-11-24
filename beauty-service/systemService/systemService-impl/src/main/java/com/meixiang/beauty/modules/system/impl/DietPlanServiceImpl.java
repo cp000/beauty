@@ -2,7 +2,7 @@ package com.meixiang.beauty.modules.system.impl;
 
 import com.meixiang.beauty.common.dto.practitioner.healthService.DietPlanDTO;
 import com.meixiang.beauty.common.utils.DateUtils;
-import com.meixiang.beauty.modules.system.DietPlanService;
+import com.meixiang.beauty.modules.system.api.DietPlanService;
 import com.meixiang.beauty.sys.utils.UUIDUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;

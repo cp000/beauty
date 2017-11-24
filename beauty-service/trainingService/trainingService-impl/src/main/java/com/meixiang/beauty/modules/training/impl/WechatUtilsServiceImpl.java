@@ -1,6 +1,7 @@
 package com.meixiang.beauty.modules.training.impl;
 
-import com.meixiang.beauty.modules.wechat.service.WechatUtilsService;
+
+import com.meixiang.beauty.modules.training.api.WechatUtilsService;
 import com.meixiang.beauty.sys.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

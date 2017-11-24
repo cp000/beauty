@@ -1,4 +1,4 @@
-package com.meixiang.beauty.modules.system;
+package com.meixiang.beauty.modules.system.api;
 
 import com.meixiang.beauty.common.dto.PageParamDTO;
 import com.meixiang.beauty.common.dto.practitioner.healthServicePackage.HealthServicePackageDTO;

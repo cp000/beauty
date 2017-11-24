@@ -18,7 +18,7 @@
 	<context:property-placeholder ignore-unresolvable="true" location="classpath*:/system.properties" />
 
 	<!-- 使用Annotation自动注册Bean,只扫描@Controller -->
-	<context:component-scan base-package="com.beauty.laoyou" use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
+	<context:component-scan base-package="com.meixiang.beauty" use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
 	</context:component-scan>
 
@@ -36,7 +36,7 @@
 				</property>
 				<property name="prettyPrint" value="false"/>
 				<property name="objectMapper">
-					<bean class="com.beauty.laoyou.common.mapper.JsonMapper"></bean>
+					<bean class="com.meixiang.beauty.common.mapper.JsonMapper"></bean>
 				</property>
 			</bean>
 			<!-- 使用XML格式输出数据 -->
@@ -48,10 +48,10 @@
 						</property>
 						<property name="annotatedClasses">
 							<list>
-								<value>com.beauty.laoyou.common.persistence.BaseEntity</value>
-								<value>com.beauty.laoyou.common.supcan.treelist.TreeList</value>
-								<value>com.beauty.laoyou.common.supcan.treelist.cols.Col</value>
-								<value>com.beauty.laoyou.common.supcan.treelist.cols.Group</value>
+								<value>com.meixiang.beauty.common.persistence.BaseEntity</value>
+								<value>com.meixiang.beauty.common.supcan.treelist.TreeList</value>
+								<value>com.meixiang.beauty.common.supcan.treelist.cols.Col</value>
+								<value>com.meixiang.beauty.common.supcan.treelist.cols.Group</value>
 							</list>
 						</property>
 					</bean>
@@ -82,9 +82,6 @@
 	<!-- 对静态资源文件的访问， 将无法mapping到Controller的path交给default servlet handler处理 -->
 	<mvc:default-servlet-handler />
 
-	<!-- 静态资源映射 -->
-	<mvc:resources mapping="/static/**" location="/static/" cache-period="31536000"/>
-
 	<!-- 定义无Controller的path<->view直接映射 -->
 	<mvc:view-controller path="/" view-name="redirect:${web.view.index}"/>
 
@@ -94,7 +91,7 @@
 	</bean>
 
 	<!-- 注解扫描包 -->
-	<context:component-scan base-package="com.beauty.laoyou" />
+	<context:component-scan base-package="com.meixiang.beauty" />
 
 	<!-- 开启注解 -->
 	<mvc:annotation-driven/>

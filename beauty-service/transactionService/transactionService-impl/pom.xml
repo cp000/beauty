@@ -2,19 +2,14 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.meixiang</groupId>
-    <artifactId>myService</artifactId>
+    <artifactId>transactionService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>myService-impl</artifactId>
-  <name>myService-impl</name>
-  <description>myService-impl</description>
+  <artifactId>transactionService-impl</artifactId>
+  <name>transactionService-impl</name>
+  <description>transactionService-impl</description>
   
   <dependencies>
-       <dependency>
-           <groupId>com.meixiang</groupId>
-           <artifactId>healthService-api</artifactId>
-           <version>0.0.1-SNAPSHOT</version>
-       </dependency>
       <dependency>
           <groupId>com.meixiang</groupId>
           <artifactId>beauty-common</artifactId>
@@ -22,7 +17,7 @@
       </dependency>
       <dependency>
           <groupId>com.meixiang</groupId>
-          <artifactId>myService-api</artifactId>
+          <artifactId>transactionService-api</artifactId>
           <version>0.0.1-SNAPSHOT</version>
       </dependency>
   </dependencies>

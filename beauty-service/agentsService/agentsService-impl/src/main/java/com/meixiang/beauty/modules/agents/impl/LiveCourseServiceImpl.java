@@ -4,13 +4,13 @@ import com.meixiang.beauty.common.dto.PageParamDTO;
 import com.meixiang.beauty.common.dto.course.*;
 import com.meixiang.beauty.common.persistence.Page;
 import com.meixiang.beauty.common.utils.StringUtils;
+import com.meixiang.beauty.modules.agents.api.LiveCourseService;
 import com.meixiang.beauty.modules.agents.dao.LiveCourseDao;
 import com.meixiang.beauty.sys.entity.Dict;
 import com.meixiang.beauty.sys.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.meixiang.beauty.modules.agents.LiveCourseService;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +20,7 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = false)
-public class LiveCourseServiceImpl implements LiveCourseService{
+public class LiveCourseServiceImpl implements LiveCourseService {
 
     @Autowired
     LiveCourseDao liveCourseDao;

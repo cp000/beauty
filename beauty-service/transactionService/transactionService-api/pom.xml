@@ -9,10 +9,10 @@
     </dependencies>
     <parent>
     <groupId>com.meixiang</groupId>
-    <artifactId>myService</artifactId>
+    <artifactId>transactionService</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>myService-api</artifactId>
-  <name>myService-api</name>
-  <description>myService-api</description>
+  <artifactId>transactionService-api</artifactId>
+  <name>transactionService-api</name>
+  <description>transactionService-api</description>
 </project>

@@ -44,19 +44,13 @@
     <orderEntry type="library" name="Maven: com.aliyun.opensearch:aliyun-sdk-opensearch:3.1.3" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-live:2.3.0" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.2" level="project" />
-    <orderEntry type="module" module-name="common-web" />
-    <orderEntry type="module" module-name="healthService-api" />
-    <orderEntry type="module" module-name="healthService-impl" />
+    <orderEntry type="module" module-name="system-web" />
+    <orderEntry type="module" module-name="systemService-api" />
+    <orderEntry type="module" module-name="systemService-impl" />
     <orderEntry type="library" name="Maven: org.checkerframework:jdk7:1.9.1" level="project" />
-    <orderEntry type="module" module-name="myService-api" />
-    <orderEntry type="module" module-name="myService-impl" />
-    <orderEntry type="module" module-name="healthDataService-api" />
-    <orderEntry type="module" module-name="healthDataService-impl" />
-    <orderEntry type="module" module-name="activityService-api" />
-    <orderEntry type="module" module-name="activityService-impl" />
-    <orderEntry type="module" module-name="weChatService-impl" />
-    <orderEntry type="module" module-name="weChatService-api" />
-    <orderEntry type="module" module-name="health-web" />
+    <orderEntry type="module" module-name="product-web" />
+    <orderEntry type="module" module-name="productService-api" />
+    <orderEntry type="module" module-name="productService-impl" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.0.8.RELEASE" level="project" />

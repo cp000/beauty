@@ -3,7 +3,7 @@ package com.meixiang.beauty.modules.system.impl;
 
 import com.meixiang.beauty.common.dto.elder.RelativeElderDTO;
 import com.meixiang.beauty.common.dto.practitioner.healthArchive.BasicInfoDTO;
-import com.meixiang.beauty.modules.system.RelativeElderService;
+import com.meixiang.beauty.modules.system.api.RelativeElderService;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
