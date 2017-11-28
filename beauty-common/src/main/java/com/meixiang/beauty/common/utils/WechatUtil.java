@@ -54,7 +54,8 @@ public class WechatUtil {
     public static String getOauth2Url(String backUrl) {
         backUrl = urlEncodeUTF8(backUrl);
         return "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" +
-                ConstantUtil.CORPID + "&redirect_uri=" + backUrl + "&response_type=code&scope=snsapi_base&connect_redirect=1#wechat_redirect";
+                ConstantUtil.CORPID + "&redirect_uri=" +
+                backUrl + "&response_type=code&scope=snsapi_base&connect_redirect=1#wechat_redirect";
     }
 
 

@@ -32,33 +32,33 @@
 		<property name="repeatInterval" value="6000000" />
 	</bean>
 
-	<bean id="arrangementSurveyInfoQuarzTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-		<property name="targetObject" ref="scheduledQuarz"/>
-		<property name="targetMethod" value="arrangementSurveyInfo"/>
-		<property name="concurrent" value="false"/>
-	</bean>
-	<!-- 每分钟检测一次  -->
-	<bean id="arrangementSurveyInfoQuarzCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-		<property name="jobDetail" ref="arrangementSurveyInfoQuarzTask"/>
-		<property name="cronExpression" value="0 0 1 * * ?"/>
-	</bean>
+	<!--<bean id="arrangementSurveyInfoQuarzTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+		<!--<property name="targetObject" ref="scheduledQuarz"/>-->
+		<!--<property name="targetMethod" value="arrangementSurveyInfo"/>-->
+		<!--<property name="concurrent" value="false"/>-->
+	<!--</bean>-->
+	<!--&lt;!&ndash; 每分钟检测一次  &ndash;&gt;-->
+	<!--<bean id="arrangementSurveyInfoQuarzCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+		<!--<property name="jobDetail" ref="arrangementSurveyInfoQuarzTask"/>-->
+		<!--<property name="cronExpression" value="0 0 1 * * ?"/>-->
+	<!--</bean>-->
 
-	<bean id="makeHealthDataQuarzTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
-		<property name="targetObject" ref="scheduledQuarz"/>
-		<property name="targetMethod" value="makeHealthData"/>
-		<property name="concurrent" value="false"/>
-	</bean>
-	<!-- 每分钟检测一次  -->
-	<bean id="makeHealthDataQuarzCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
-		<property name="jobDetail" ref="makeHealthDataQuarzTask"/>
-		<property name="cronExpression" value="0 0 2 * * ?"/>
-	</bean>
+	<!--<bean id="makeHealthDataQuarzTask" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">-->
+		<!--<property name="targetObject" ref="scheduledQuarz"/>-->
+		<!--<property name="targetMethod" value="makeHealthData"/>-->
+		<!--<property name="concurrent" value="false"/>-->
+	<!--</bean>-->
+	<!--&lt;!&ndash; 每分钟检测一次  &ndash;&gt;-->
+	<!--<bean id="makeHealthDataQuarzCronTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">-->
+		<!--<property name="jobDetail" ref="makeHealthDataQuarzTask"/>-->
+		<!--<property name="cronExpression" value="0 0 2 * * ?"/>-->
+	<!--</bean>-->
 
 	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
 		<property name="triggers">
 			<list>
-				<!--<ref bean="updateWechatInfoQuarzCronTrigger"/>
-				<ref bean="arrangementSurveyInfoQuarzCronTrigger"/>-->
+				<ref bean="updateWechatInfoQuarzCronTrigger"/>
+				<!--<ref bean="arrangementSurveyInfoQuarzCronTrigger"/>-->
 				<!--<ref bean="makeHealthDataQuarzCronTrigger"/>-->
 			</list>
 		</property>

@@ -3,25 +3,25 @@
  */
 package com.meixiang.beauty.sys.service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
 import com.meixiang.beauty.common.persistence.Page;
+import com.meixiang.beauty.common.security.Digests;
 import com.meixiang.beauty.common.service.BaseService;
 import com.meixiang.beauty.common.utils.CacheUtils;
 import com.meixiang.beauty.common.utils.Encodes;
 import com.meixiang.beauty.common.utils.StringUtils;
+import com.meixiang.beauty.sys.dao.SystemDao;
 import com.meixiang.beauty.sys.dao.UserDao;
 import com.meixiang.beauty.sys.entity.Menu;
 import com.meixiang.beauty.sys.entity.User;
-import com.meixiang.beauty.common.security.Digests;
+import com.meixiang.beauty.sys.utils.UserUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import com.meixiang.beauty.sys.dao.SystemDao;
-import com.meixiang.beauty.sys.utils.UserUtils;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 系统管理，安全相关实体的管理类,包括用户、角色、菜单.
@@ -210,13 +210,11 @@ public class SystemService extends BaseService {
 	}
 	
 	public Map<String, Object> getWechatParameter(){
+
 		return systemDao.getWechatParameter();
 	}
 	
-	public Map<String, Object> getDoctorWechatParameter(){
-		return systemDao.getDoctorWechatParameter();
-	}
-	
+
 	public List<String> findPermissionsByUserId(String id) {
         List<String> permissions = new ArrayList<String>();
         Menu menuParam = new Menu();

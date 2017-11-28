@@ -22,7 +22,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 /**
- * Created by sunxiao on 2017/9/11.
+ * Created by chenjiake on 2017/9/11.
  */
 @Service
 @Transactional(readOnly = false)
@@ -39,7 +39,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
 
     @Override
     public String processWechatRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        System.out.println("processWechatRequest===================================");
+
         String respMessage = null;
 
         /** 解析xml数据 */
@@ -53,7 +53,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
             if(eventType.equals(MessageUtil.SCAN)){
                 //已关注公众号的情况下扫描
                 //this.updateAttentionInfo(xmlEntity);
-                respMessage = processScanEvent(xmlEntity,"oldUser",request,response);
+                respMessage = processScanEvent(xmlEntity,request,response,"oldUser");
             }else if (eventType.equals(MessageUtil.EVENT_TYPE_SUBSCRIBE)){
                 //扫描关注公众号或者搜索关注公众号都在其中
                 respMessage = processSubscribeEvent(xmlEntity, request,response);
@@ -160,7 +160,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
         //}
 
 
-        return processScanEvent(xmlEntity,"newUser",request,response);
+        return processScanEvent(xmlEntity,request,response,"newUser");
     }
 
     private void processUnSubscribeEvent(ReceiveXmlEntity xmlEntity,HttpServletRequest request)
@@ -240,10 +240,12 @@ public class WechatCoreServiceImpl implements WechatCoreService {
         return respMessage;
     }
 
-    private String processScanEvent(ReceiveXmlEntity xmlEntity,String userType,HttpServletRequest request,HttpServletResponse response)
+    private String processScanEvent(ReceiveXmlEntity xmlEntity,
+                                    HttpServletRequest request,
+                                    HttpServletResponse response,
+                                    String userType)
     {
         String EventKey = xmlEntity.getEventKey();
-        System.out.println(EventKey + "EventKey=========================================");
         Article article = new Article();
         List<Article> articleList = new ArrayList<Article>();
         NewsMessage newsMessage = new NewsMessage();
@@ -261,9 +263,7 @@ public class WechatCoreServiceImpl implements WechatCoreService {
             textMessage.setFuncFlag(0);
             textMessage.setContent("尊敬");
             return MessageUtil.textMessageToXml(textMessage);
-
         }
-
         if(articleList.size() == 0){
             return "";
         }
@@ -306,7 +306,6 @@ public class WechatCoreServiceImpl implements WechatCoreService {
                 map.put("token", token);
                 map.put("ticket", ticket);
                 map.put("id", "1");
-
                 //wechatInfoDao.updateWechatParameter(map);
                 //sessionRedisCache.putWeChatParamToRedis(map);
             }

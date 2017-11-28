@@ -5,6 +5,7 @@ package com.meixiang.beauty.common.utils;
  */
 
 
+import com.meixiang.beauty.common.dto.wechat.WechatConfigDTO;
 import org.apache.log4j.Logger;
 
 import java.io.UnsupportedEncodingException;
@@ -22,22 +23,23 @@ public class JsApiTicketUtil {
      * @param url
      * @return
      */
-    public static Map<String, String> sign(String jsapi_ticket, String url) {
-        Map<String, String> ret = new HashMap<String, String>();
+    public static WechatConfigDTO sign(String jsapi_ticket, String url) {
+        WechatConfigDTO ret = new WechatConfigDTO();
         String nonce_str = create_nonce_str();
         String timestamp = create_timestamp();
-        String string1;
-        String signature = "";
+
         //注意这里参数名必须全部小写，且必须有序
-        string1 = "jsapi_ticket=" + jsapi_ticket +
+        String configUrl = "jsapi_ticket=" + jsapi_ticket +
                 "&noncestr=" + nonce_str +
                 "&timestamp=" + timestamp +
-                "&url=" + url;
+                "&url=" + url;;
+        String signature = "";
+
         try
         {
             MessageDigest crypt = MessageDigest.getInstance("SHA-1");
             crypt.reset();
-            crypt.update(string1.getBytes("UTF-8"));
+            crypt.update(configUrl.getBytes("UTF-8"));
             signature = byteToHex(crypt.digest());
         }
         catch (NoSuchAlgorithmException e)
@@ -48,12 +50,12 @@ public class JsApiTicketUtil {
         {
             e.printStackTrace();
         }
-        ret.put("url", url);
-        ret.put("jsapi_ticket", jsapi_ticket);
-        ret.put("nonceStr", nonce_str);
-        ret.put("timestamp", timestamp);
-        ret.put("signature", signature);
-        ret.put("appid", ConstantUtil.CORPID);
+        ret.setUrl(url);
+        ret.setJsapi_ticket(jsapi_ticket);
+        ret.setNonceStr(nonce_str);
+        ret.setTimestamp(timestamp);
+        ret.setSignature(signature);
+        ret.setAppid(ConstantUtil.CORPID);
         return ret;
     }
 

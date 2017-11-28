@@ -1,4 +1,4 @@
-package com.meixiang.beauty.web.transaction.controller;
+package com.meixiang.beauty.web.wechat.controller;
 
 import com.meixiang.beauty.common.utils.CookieUtils;
 import com.meixiang.beauty.common.utils.StringUtils;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 @RequestMapping
-public class PayController {
+public class WechatPayController {
 
     /**
      *
@@ -103,7 +103,7 @@ public class PayController {
      * 处理来自微信服务器的请求
      *
      */
-    @RequestMapping(value = "/wxPay/patientPay.do", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "/wxPay/businessPay.do", method = {RequestMethod.POST, RequestMethod.GET})
     public String wxPay(@RequestParam(required=true) String serviceType,
                         @RequestParam(required=false) String phoneConDoctorDetail,
                         @RequestParam(required=false) String doctorId,

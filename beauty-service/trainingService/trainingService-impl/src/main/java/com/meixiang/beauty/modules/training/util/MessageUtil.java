@@ -19,7 +19,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+/**
+ * 消息工具类
+ *
+ * @author wangbaowei
+ * @date 2015-11-04
+ */
 public class MessageUtil {
 
 	/**

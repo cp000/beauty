@@ -4,10 +4,10 @@
 package com.meixiang.beauty.sys.dao;
 
 
-import java.util.HashMap;
-
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
 import org.springframework.stereotype.Repository;
+
+import java.util.HashMap;
 
 /**
  * 用户DAO接口
@@ -20,5 +20,4 @@ public interface SystemDao {
 
 	HashMap<String,Object> getWechatParameter();
 
-    HashMap<String,Object> getDoctorWechatParameter();
 }
