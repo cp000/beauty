@@ -1,4 +1,4 @@
-package com.meixiang.beauty.web.wechat.controller;
+package com.meixiang.beauty.web.weixin.controller;
 
 import com.meixiang.beauty.common.utils.CookieUtils;
 import com.meixiang.beauty.common.utils.StringUtils;
@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 @RequestMapping
-public class WechatPayController {
+public class WeixinPayController {
 
     /**
      *

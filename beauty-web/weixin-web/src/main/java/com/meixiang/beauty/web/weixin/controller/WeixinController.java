@@ -1,4 +1,4 @@
-package com.meixiang.beauty.web.wechat.controller;
+package com.meixiang.beauty.web.weixin.controller;
 
 import com.meixiang.beauty.common.dto.ResponseDTO;
 import com.meixiang.beauty.common.dto.wechat.WechatConfigDTO;
@@ -34,7 +34,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping(value = "")
-public class WechatController extends BaseController {
+public class WeixinController extends BaseController {
 
     @Autowired
     private WechatCoreService wechatCoreService;

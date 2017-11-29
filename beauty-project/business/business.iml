@@ -25,12 +25,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="system-web" />
-    <orderEntry type="module" module-name="systemService-api" />
-    <orderEntry type="module" module-name="systemService-impl" />
-    <orderEntry type="module" module-name="product-web" />
-    <orderEntry type="module" module-name="productService-api" />
-    <orderEntry type="module" module-name="productService-impl" />
     <orderEntry type="module" module-name="beauty-common" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.1" level="project" />
     <orderEntry type="library" name="Maven: com.aliyun.oss:aliyun-sdk-oss:2.6.0" level="project" />
@@ -60,8 +54,8 @@
     <orderEntry type="module" module-name="product-web" />
     <orderEntry type="module" module-name="productService-api" />
     <orderEntry type="module" module-name="productService-impl" />
-    <orderEntry type="module" module-name="weChatService-api" />
-    <orderEntry type="module" module-name="weChatService-impl" />
+    <orderEntry type="module" module-name="weixinService-api" />
+    <orderEntry type="module" module-name="weixinService-impl" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:4.0.8.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.0.8.RELEASE" level="project" />
