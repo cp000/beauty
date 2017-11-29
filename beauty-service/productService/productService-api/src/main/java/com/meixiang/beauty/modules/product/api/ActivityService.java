@@ -19,51 +19,6 @@ import java.util.List;
 @Service
 public interface ActivityService {
 
-    ActivityDTO getActivity(String id);
-
-    List<ActivityDTO> getActivityList(String elderID, String pageNo, String activityType);
-
-    Integer addActivity(Activity activity, User user);
-
-    List<AttendedActivityDTO> getActivityByElderUser(String elderID);
-
-    List<ActivityDiscussDTO> getActivityDiscuss(String id, Integer page);
-
-    Integer addActivityDiscuss(ActivityDiscussDTO activityDiscussDTO);
-
-    Integer updateActivtyStatus();
-
-    Integer getActivityAttendStatus(String activityID,String elderID);
-
-    String addActivityUser(String activityID,List<String> elderID);
-
-    void createActivityEasemobGroup(String activityID,User user);
-
-    void joinActivityEasemobGroup(String activityEasemobGroupID, User user);
-
-    List<ActivityEasemobGroupInfo> getActivityEasemobGroupUserList(String activityID);
-
-    List<ActivityDTO> getActivityListBySearch(String search);
-
-    void addActivityFavorite(String activityID,String sysElderUserID);
-
-    void delActivityFavorite(String activityID,String sysElderUserID);
-
-    List<ActivityDTO> activityListByFirstPage(String hospitalID);
-
-    List<ActivityDTO> getMyFavoriteActivityList(String sysElderUserID);
-
-    List<ActivityEasemobGroup> getUserActivityGroupInfo(String elderEasemobID);
-
-    List<ActivityEasemobGroup> getUserActivityEasemobGroupList(String elderEasemobID);
-
-    ActivityEasemobGroupInfoDTO getActivityEasemobGroupUsers(String groupID);
-
     void sendReservationMessage();
 
-    void insertIP(String ip);
-
-    Page activityListByBackEnd(String hospitalID, String status, Integer pageNo, Integer pageSize, String searchValue, String startDate, String endDate);
-
-    List<ActivityUser> activityUserListByBackEnd(String activityUser);
 }

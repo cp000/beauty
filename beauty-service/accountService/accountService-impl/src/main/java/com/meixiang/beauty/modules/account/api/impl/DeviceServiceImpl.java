@@ -10,7 +10,7 @@ import com.meixiang.beauty.common.dto.practitioner.Settings.SysElderUserDTO;
 import com.meixiang.beauty.common.persistence.Page;
 import com.meixiang.beauty.common.utils.OpenSearchTool;
 import com.meixiang.beauty.common.utils.StringUtils;
-import com.meixiang.beauty.modules.account.api.dao.DeviceDao;
+import com.meixiang.beauty.modules.account.api.dao.AccountDao;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.meixiang.beauty.modules.account.api.DeviceService;
@@ -32,7 +32,7 @@ import java.util.*;
 public class DeviceServiceImpl implements DeviceService {
 
     @Autowired
-    DeviceDao deviceDao;
+    AccountDao deviceDao;
 
     @Autowired
     UserDao userDao;

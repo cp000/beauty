@@ -5,7 +5,7 @@ import com.meixiang.beauty.common.dto.course.*;
 import com.meixiang.beauty.common.persistence.Page;
 import com.meixiang.beauty.common.utils.StringUtils;
 import com.meixiang.beauty.modules.agents.api.LiveCourseService;
-import com.meixiang.beauty.modules.agents.dao.LiveCourseDao;
+import com.meixiang.beauty.modules.agents.dao.AgentsDao;
 import com.meixiang.beauty.sys.entity.Dict;
 import com.meixiang.beauty.sys.service.DictService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ import java.util.List;
 public class LiveCourseServiceImpl implements LiveCourseService {
 
     @Autowired
-    LiveCourseDao liveCourseDao;
+    AgentsDao liveCourseDao;
 
     @Autowired
     DictService dictService;

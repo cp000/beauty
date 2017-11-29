@@ -2,7 +2,7 @@ package com.meixiang.beauty.modules.transaction.impl;
 
 import com.meixiang.beauty.common.dto.survey.*;
 import com.meixiang.beauty.common.utils.DateUtils;
-import com.meixiang.beauty.modules.transaction.dao.SurveyDao;
+import com.meixiang.beauty.modules.transaction.dao.TransactionDao;
 import com.meixiang.beauty.modules.transaction.api.SurveyService;
 import com.meixiang.beauty.sys.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +30,7 @@ public class SurveyServiceImpl implements SurveyService {
     protected MongoTemplate mongoTemplate;
 
     @Autowired
-    protected SurveyDao surveyDao;
+    protected TransactionDao surveyDao;
 
     @Override
     public List<SurveyDTO> getAllSurveyQuestions() {
