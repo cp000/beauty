@@ -1,117 +1,167 @@
-/**
- * Created by 郑强丽 on 2017/7/21.
- */
 angular.module('controllers',[]).controller('indexCtrl',
-    ['$scope','$interval','$timeout','$rootScope','$stateParams','$state','GetNews',
-        function ($scope,$interval,$timeout,$rootScope,$stateParams,$state,GetNews) {
+    ['$scope','$interval','$rootScope','$stateParams','$state','UserLogin','Global','MemberStatistics',
+        'DoctorStatistics','NurseStatistics','DiabeticStatistics','HypertensiveStatistics',
+        function ($scope,$interval,$rootScope,$stateParams,$state,UserLogin,Global,MemberStatistics,
+                  DoctorStatistics,NurseStatistics,DiabeticStatistics,HypertensiveStatistics) {
 
-            //banner
-            $scope.slides= [
-                {image:'/images/banner2.jpg',href:''},
-                {image:'/images/banner3.jpg',href:''},
-                {image:'/images/banner1.jpg',href:''}
-            ];
 
-            function bannerPic(){
-                var i = -1;
-                var timer;
-                function move(){
-                    $('.bannerItem').eq(i).fadeIn(600).siblings().fadeOut(600);
-                }
-                function setint(){
-                    i++;
-                    if(i >= $('.bannerItem').length){
-                        i = 0;
-                    }
-                    move();
-                }
-                timer = $interval(setint,5000)
+            $scope.columnCharts = {};
+            $scope.pieCharts = {};
+            $scope.barCharts = {};
 
-                $scope.change = function(act){
-                    $interval.cancel(timer);
-                    timer = null;
-                    if(act == 'next'){
-                        i++;
-                        if(i >= $('.bannerItem').length){
-                            i = 0;
-                        }
-                    }else if(act == 'prev'){
-                        i--;
-                        if(i < 0){
-                            i = $('.bannerItem').length-1;
-                        }
-                    }
-                    move();
-                    timer = $interval(setint,5000)
-                }
-            }
-            bannerPic();
-
-            $scope.indexProject = function(act){
-                if(act == 'move')
-                {
-                    $('.projectText').stop().animate({'bottom':'0px'},200);
-                }
-                else if(act == 'out')
-                {
-                    $('.projectText').stop().animate({'bottom':'-92px'},300);
-                }
-
-            }
-
-            //新闻中心内容
-            function contentMove(obj_li,icon_ul){
-                var li = '<li class="active"></li>';
-                var num = 1;
-                var li_height = obj_li.height();
-
-                for(var i = 0; i < obj_li.length-1; i++)
-                {
-                    li += '<li></li>'
-                }
-                icon_ul.html(li);
-
-                function move(){
-                    obj_li.parents('ul').stop().animate({'top': -li_height * num});
-                    num ++;
-                    if( num == obj_li.length){
-                        num = 0;
-                    }
-                    icon_ul.find('li').removeClass('active').eq(num-1).addClass('active');
-                }
-
-                $interval(function(){
-                    move();
-                },3000)
-
-                icon_ul.find('li').click(function(){
-                    num = $(this).index();
-                    move();
-                })
-            }
-
-            GetNews.save({
-                pageNo:'1',
-                pageSize:'6',
-                requestData:{
-                    category:{id:'edef3527821f407687ce890f031e98ba'},
-                    id:''
-                }
-            },function(data){
+            //会员总人数
+            $scope.memberSeries = [];
+            MemberStatistics.get(function(data){
                 if(data.responseData){
-                    $scope.newsList = data.responseData.news;
-                    $timeout(function(){
-                        $('.newsArticle').show()
-                        for(var i = 0; i < $('.newsArticle').length; i++){
-                            var articleCont = $('.newsArticle').eq(i).html().replace(/&gt;/g,'>').replace(/&lt;/g,'<');
-                            $('.newsArticle').eq(i).html(articleCont);
-                            var articleOmit = $('.newsArticle').eq(i).text().substring(0,113);
-                            $('.newsArticle').eq(i).text(articleOmit + '...');
+                    $scope.elderNum = data.responseData.elderNum;
+                    angular.forEach(data.responseData,function(data,index,arrya){
+                        if(index != 'elderNum'){
+                            if(index == 'diabeticNum'){
+                                index = '糖尿病患者'
+                            }
+                            if(index == 'hypertensiveNum'){
+                                index = '高血压患者'
+                            }
+                            $scope.memberSeries.push({name:index,data:[data]});
                         }
-                        contentMove($('#newsContent li'),$('.newsIcon'));
-                    },500)
+                    })
                 }
-
             })
+
+            //医生总人数
+            $scope.doctorSeries = [];
+            DoctorStatistics.get(function(data){
+                if(data.responseData){
+                    $scope.doctorNum = data.responseData.total;
+                    angular.forEach(data.responseData,function(data,index,array){
+                        if(index != 'total'){
+                            $scope.doctorSeries.push({data:[data],name:index});
+                        }
+                    })
+                }
+            })
+
+            //护士总人数
+            $scope.nurseSeries = [];
+            NurseStatistics.get(function(data){
+                if(data.responseData){
+                    $scope.nurseNum = data.responseData.total;
+                    angular.forEach(data.responseData,function(data,index,array){
+                        if(index != 'total'){
+                            $scope.nurseSeries.push({name:index,data:[data]});
+                        }
+                    })
+                }
+            })
+
+            //糖尿病会员分析
+            $scope.diabeticSeries = [{
+                name:'糖尿病会员分析',
+                data:[]
+            }]
+            DiabeticStatistics.get(function(data){
+                if(data.responseData){
+                    var total = data.responseData.diabeticNum;
+                    var package = data.responseData.diabeticPackageNum;
+                    $scope.diabeticSeries[0].data = [package,total-package]
+                }
+            })
+
+            //高血压会员分析
+            $scope.hypertensiveSeries = [{
+                name:'高血压会员分析',
+                data:[]
+            }]
+            HypertensiveStatistics.get(function(data){
+                if(data.responseData){
+                    var total = data.responseData.hypertensiveNum;
+                    var package = data.responseData.hypertensivePackageNum;
+                    $scope.hypertensiveSeries[0].data = [package,total-package]
+                }
+            })
+
+
+
+            $scope.columnCharts.options = {
+                title:'',
+                chart: {
+                    type: 'column'
+                },
+                xAxis: {
+                    categories:''
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+                plotOptions: {
+                    column: {
+                        dataLabels: {
+                            enabled: true,
+                            allowOverlap: true
+                        }
+                    }
+                },
+                legend: {
+                    enabled: true			//隐藏data中的name显示
+                },
+                credits: {		            //去除右下角highcharts标志
+                    enabled: false
+                }
+            };
+
+            $scope.pieCharts.options = {
+                title:'',
+                chart: {
+                   type:'pie'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                legend: {
+                    enabled: false			//隐藏data中的name显示
+                },
+                credits: {		            //去除右下角highcharts标志
+                    enabled: false
+                }
+            };
+            $scope.barCharts.options = {
+                title:'',
+                chart: {
+                    type: 'bar'
+                },
+                xAxis: {
+                    categories: ['已签约服务套餐','未签约服务套餐'],
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: ''
+                    }
+                },
+                plotOptions: {
+                    bar: {
+                        dataLabels: {
+                            enabled: true,
+                            allowOverlap: true
+                        }
+                    }
+                },
+                legend: {
+                    enabled: false			//隐藏data中的name显示
+                },
+                credits: {		            //去除右下角highcharts标志
+                    enabled: false
+                }
+            };
 
         }])

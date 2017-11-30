@@ -1,0 +1,167 @@
+<div id="wrapper">
+    <hospital-menu title="cmsTemplate"></hospital-menu>
+    <div class="fixHeight"></div>
+    <div id="page-wrapper">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>消息与提醒模板</h2>
+                </div>
+            </div>
+            <!-- /. ROW  -->
+            <hr/>
+            <!--模板列表start-->
+            <ul id="cmsTemplateTab" class="nav nav-tabs">
+                <li class="active">
+                    <a href="#news" data-toggle="tab" ng-click="">消息模板</a>
+                </li>
+                <li>
+                    <a href="#remind" data-toggle="tab" ng-click="">老友提醒模板</a>
+                </li>
+            </ul>
+            <div id="cmsTemplateContent" class="tab-content">
+                <div class="tab-pane fade in active" style="margin-top: 2%;" id="news">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                消息模板列表
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <div class="dataTables_wrapper form-inline" role="grid">
+                                        <div class="panel-heading">
+                                            <input type="text" class="form-control input-sm" placeholder="标题" style="width:15%;">
+                                            <div class="date-picker input-daterange" data-date-format="yyyy-mm-dd" style="display:inline;">
+                                                <span style="margin:0 5%">
+                                                    更新时间<input name="dtBegin" type="text" class="input-sm" ng-model="startDate" style="margin-left:2%;">
+                                                    —<input name="dtEnd" type="text" class="input-sm" ng-model="endDate" style="margin-left:1%;">
+                                                </span>
+                                            </div>
+                                            <button class="btn btn-default" style="width:10%;" ng-click="">查询</button>
+                                            <button class="btn btn-primary" style="width:15%;" ng-click="popup('new')">新增消息模板</button>
+                                        </div>
+                                        <table class="table table-striped table-bordered table-hover text-center">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">模板标题</th>
+                                                <th class="text-center">内容</th>
+                                                <th class="text-center">更新时间</th>
+                                                <th class="text-center">操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>我是标题</td>
+                                                <td>我是内容，内容内容内容内容内容内容</td>
+                                                <td>2017-07-27 13:00:00</td>
+                                                <td>
+                                                    <a ng-click="popup()">修改</a>
+                                                    <a ng-click="delete(Id)">删除</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div page-tool></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Advanced Tables -->
+                    </div>
+                </div>
+                <div class="tab-pane fade" style="margin-top: 2%;" id="remind">
+                    <div class="col-md-12">
+                        <!-- Advanced Tables -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                提醒模板列表
+                            </div>
+                            <div class="panel-body">
+                                <div class="table-responsive">
+                                    <div class="dataTables_wrapper form-inline" role="grid">
+                                        <div class="panel-heading">
+                                            <input type="text" class="form-control input-sm" placeholder="标题" style="width:15%;">
+                                            <div class="date-picker input-daterange" data-date-format="yyyy-mm-dd" style="display:inline;">
+                                                <span style="margin:0 5%">
+                                                    更新时间<input name="dtBegin" type="text" class="input-sm" ng-model="startDate" style="margin-left:2%;">
+                                                    —<input name="dtEnd" type="text" class="input-sm" ng-model="endDate" style="margin-left:1%;">
+                                                </span>
+                                            </div>
+                                            <button class="btn btn-default" style="width:10%;" ng-click="">查询</button>
+                                            <button class="btn btn-primary" style="width:15%;" ng-click="popup('new')">新增自定义提醒</button>
+                                        </div>
+                                        <table class="table table-striped table-bordered table-hover text-center">
+                                            <thead>
+                                            <tr>
+                                                <th class="text-center">模板标题</th>
+                                                <th class="text-center">类型</th>
+                                                <th class="text-center">内容</th>
+                                                <th class="text-center">使用场景</th>
+                                                <th class="text-center">更新时间</th>
+                                                <th class="text-center">操作</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <td>我是标题</td>
+                                                <td>系统提醒</td>
+                                                <td>我是详细的更新内容，里边带有变量参数</td>
+                                                <td>具体场景</td>
+                                                <td>2017-07-27 12:00:00</td>
+                                                <td>
+                                                    <a ng-click="popup()">修改</a>
+                                                    <a ng-click="delete(Id)">删除</a>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div page-tool></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Advanced Tables -->
+                    </div>
+                </div>
+            </div>
+            <!--模板列表end-->
+            <!--新增查看模板内容 start-->
+            <div ng-if="templateAlert" class="row shadeContainer">
+                <div class="col-md-4" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            {{title}}
+                            <button type="button" class="close" ng-click="close()">x</button>
+                        </div>
+                        <div class="panel-body">
+                            <form role="form" name="TemplateForm" ng-submit="subTemplateForm(TemplateForm.$valid)" novalidate style="margin-left:20px;">
+                                <div class="form-group">
+                                    <label style="width:80px;">标题：</label>
+                                    <input type="text" class="form-control" style="display:inline;width:auto;" required>
+                                </div>
+                                <div class="form-group">
+                                    <label style="width:80px;">内容：</label>
+                                    <textarea class="form-control" style="display:inline;height:200px;" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label style="width:80px;">链接：</label>
+                                    <input type="text" class="form-control" style="display:inline;width:auto;" required>
+                                </div>
+                                <div class="form-group">
+                                    <label style="width:80px;">使用场景：</label>
+                                    <input type="text" class="form-control" style="display:inline;width:auto;" required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary" style="width:20%;">保存</button>
+                                    <button type="button" class="btn btn-default" style="width:20%;" ng-click="close()">取消</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <del-tool info="确认要删除该模板？"></del-tool>
+        </div>
+    </div>
+</div>

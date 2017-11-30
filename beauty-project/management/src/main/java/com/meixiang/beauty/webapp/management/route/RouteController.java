@@ -21,14 +21,14 @@ public class RouteController extends BaseController {
 
 
     /*
-        official 项目
+        hospital 项目
     */
     @RequestMapping(value ="",method = {RequestMethod.POST, RequestMethod.GET})
-    public String official(HttpServletResponse response) {
+    public String hospital(HttpServletResponse response) {
         response.addHeader("Pragma","no-cache");
         response.setHeader("Cache-Control","no-cache");
         response.setHeader("Expires","0");
-        return "officialIndex";
+        return "hospitalIndex";
     }
 
 

@@ -236,7 +236,7 @@ font-weight: 700;
 }
 
 .nav-second-level li a {
-    padding-left: 37px;
+    padding-left: 45px;
 }
 
 .nav-third-level li a {
@@ -257,7 +257,7 @@ font-weight: 700;
 .sidebar-collapse > .nav > li > a {
 	padding:15px 10px;
 }
-.sidebar-collapse > .nav > li > a > img{
+.sidebar-collapse > .nav > li   a   img{
     width:30px;
     margin:-3px 20px 0 25px;
 }
@@ -280,7 +280,7 @@ font-weight: 700;
 	width:15px;
 	height:1px;
 	background:#ff0000;
-	top:20px;
+	top:21px;
 }
 .nav-second-level > li > a:after,
 .nav-third-level > li > a:after {
@@ -291,7 +291,7 @@ font-weight: 700;
 	width:1px;
 	height:100%;
 	background:#ff0000;
-	top:0px;
+	top:2px;
 	z-index:10;
 }
 .nav-second-level  > li:last-child > a:after,
