@@ -4,7 +4,7 @@
 package com.meixiang.beauty.sys.dao;
 
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
-import com.meixiang.beauty.common.dto.BannerDTO;
+import com.meixiang.beauty.common.dto.system.BannerDTO;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,11 +20,8 @@ public interface SysBannerDao {
 
     Integer addBanner(BannerDTO bannerDTO);
 
-    List<BannerDTO> getBanner(BannerDTO bannerDTO);
-
     Integer bannerOff(BannerDTO bannerDTO);
 
-    List<BannerDTO> getBannerList(BannerDTO bannerDTO);
+    List<BannerDTO> getBannerList();
 
-    public void TimeUpdateBannerStatus();
 }

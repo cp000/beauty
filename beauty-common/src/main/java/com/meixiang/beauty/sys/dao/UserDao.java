@@ -4,9 +4,7 @@
 package com.meixiang.beauty.sys.dao;
 
 import java.util.List;
-import com.meixiang.beauty.common.dto.practitioner.Settings.SysElderUserDTO;
-import com.meixiang.beauty.common.persistence.CrudDao;
-import com.meixiang.beauty.sys.entity.User;
+import com.meixiang.beauty.common.dto.system.UserInfoDTO;
 import org.springframework.stereotype.Repository;
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
 
@@ -17,21 +15,12 @@ import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
  */
 @MyBatisDao
 @Repository
-public interface UserDao extends CrudDao<User> {
+public interface UserDao {
 
-	User getByLoginName(User user);
+	List<UserInfoDTO> getUserByInfo(UserInfoDTO userInfoDTO);
 
-	long findAllCount(User user);
+	void updateUserInfo(UserInfoDTO userInfoDTO);
 
-	int updatePasswordById(User user);
+	void insertUserInfo(UserInfoDTO userInfoDTO);
 
-	int updateLoginInfo(User user);
-
-	int deleteUserRole(User user);
-
-	int updateUserInfo(User user);
-
-	int updateUser(User user);
-
-	List<User> getUserByInfo(SysElderUserDTO dto);
 }

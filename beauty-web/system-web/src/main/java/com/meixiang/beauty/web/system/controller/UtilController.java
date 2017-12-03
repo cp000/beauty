@@ -4,14 +4,10 @@
 package com.meixiang.beauty.web.system.controller;
 
 import com.meixiang.beauty.common.constant.StatusConstant;
-import com.meixiang.beauty.common.dto.MenuParameterDTO;
-import com.meixiang.beauty.common.dto.ResponseDTO;
+import com.meixiang.beauty.common.dto.system.ResponseDTO;
 import com.meixiang.beauty.common.utils.OSSObjectTool;
 import com.meixiang.beauty.common.web.BaseController;
 import com.meixiang.beauty.sys.annotation.LoginRequired;
-import com.meixiang.beauty.sys.service.APPVersionService;
-import com.meixiang.beauty.sys.service.MenuService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,7 +16,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.*;
 
 /**
  * 工具 Controller
@@ -29,14 +24,8 @@ import java.util.*;
  * @version 2013-10-17
  */
 @Controller
-@RequestMapping(value = "util")
+@RequestMapping(value = "system")
 public class UtilController extends BaseController {
-
-    @Autowired
-    private MenuService menuService;
-
-    @Autowired
-    private APPVersionService appVersionService;
 
     /**
      * 上传文件
@@ -64,45 +53,6 @@ public class UtilController extends BaseController {
             response.setResult(StatusConstant.FAILURE);
         }
         return response;
-    }
-
-    /**
-     * 获取应用的菜单信息
-     *  input menuType,获取菜单的类型
-     *
-     *  output HashMap<String,Object></>
-     *	key为菜单名称
-     *  value为菜单的H5　url
-     */
-    @LoginRequired
-    @RequestMapping(value="/menu/getMenu",method = {RequestMethod.POST, RequestMethod.GET})
-    public @ResponseBody
-    ResponseDTO<MenuParameterDTO> menuData(@RequestParam(required = true) String menuType) {
-        MenuParameterDTO menuParameterDTO = menuService.getMenu(menuType);
-        ResponseDTO<MenuParameterDTO> responseDto = new ResponseDTO<>();
-        responseDto.setResponseData(menuParameterDTO);
-        responseDto.setResult(StatusConstant.SUCCESS);
-        return responseDto;
-    }
-
-    @LoginRequired
-    @RequestMapping(value="/menu/insertMenu",method = {RequestMethod.POST, RequestMethod.GET})
-    public @ResponseBody
-    ResponseDTO insertMenu(@RequestBody MenuParameterDTO menuParameterDTO) {
-        ResponseDTO responseDto=new ResponseDTO<>();
-        Integer res = menuService.insertMenu(menuParameterDTO);
-        responseDto.setResult(StatusConstant.SUCCESS);
-        return responseDto;
-    }
-
-
-    @RequestMapping(value="/version/getAPPVersion",method = {RequestMethod.POST, RequestMethod.GET})
-    public @ResponseBody
-    ResponseDTO getAPPVersion(@RequestParam String source) {
-        ResponseDTO responseDto=new ResponseDTO<>();
-        responseDto.setResponseData(appVersionService.get(source));
-        responseDto.setResult(StatusConstant.SUCCESS);
-        return responseDto;
     }
 
 }

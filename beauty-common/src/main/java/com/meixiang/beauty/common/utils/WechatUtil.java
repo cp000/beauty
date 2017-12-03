@@ -164,7 +164,9 @@ public class WechatUtil {
      * @return WechatBean 微信实体
      */
     public static WechatBean getWechatName(String token, String openid) {
-        String url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=" + token + "&openid=" + openid + "&lang=zh_CN";
+        String url = "https://api.weixin.qq.com/cgi-bin/user/info?" +
+                "access_token=" + token +
+                "&openid=" + openid + "&lang=zh_CN";
         String json = HttpRequestUtil.getConnectionResult(url, "GET", "");
         return JsonUtil.getObjFromJsonStr(json, WechatBean.class);
     }
@@ -260,79 +262,6 @@ public class WechatUtil {
         return null; // 自定义错误信息
     }
 
-    /**
-     * 从微信服务器下载多媒体文件
-     *
-     * @author deliang
-     */
-    public String downloadMediaFromWx(String accessToken, String mediaId, String messageType) throws IOException {
-
-        if (StringUtils.isEmpty(accessToken) || StringUtils.isEmpty(mediaId)) return "";
-        Long picLen = 0L;
-        InputStream inputStream = null;
-        String url = "http://file.api.weixin.qq.com/cgi-bin/media/get?access_token="
-                + accessToken + "&media_id=" + mediaId;
-        try {
-            URL urlGet = new URL(url);
-            HttpURLConnection http = (HttpURLConnection) urlGet
-                    .openConnection();
-            http.setRequestMethod("GET"); // 必须是get方式请求
-            http.setRequestProperty("Content-Type",
-                    "application/x-www-form-urlencoded");
-            http.setDoOutput(true);
-            http.setDoInput(true);
-            System.setProperty("sun.net.client.defaultConnectTimeout", "30000");// 连接超时30秒
-            System.setProperty("sun.net.client.defaultReadTimeout", "30000"); // 读取超时30秒
-            http.connect();
-            // 获取文件转化为byte流
-            inputStream = http.getInputStream();
-            picLen = http.getContentLengthLong();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        //返回图片的阿里云地址getConsultMediaBaseUrl
-        String mediaName = mediaId;
-        if(messageType.contains("image")){
-            mediaName = mediaName+".jpg";
-        }else if(messageType.contains("voice")){
-            String mediaNameAmr = mediaName+".amr";
-            String mediaNameMp3 = mediaName+".mp3";
-            BufferedInputStream bis = new BufferedInputStream(inputStream);
-            if(ConstantUtil.AMR_TOMP3_FUNC.equals("windows")){
-                FileOutputStream fos = new FileOutputStream(ConstantUtil.AMR_TOMP3_WINDOWSPATHTEMP+mediaNameAmr);
-                byte[] buf = new byte[8096];
-                int size = 0;
-                while ((size = bis.read(buf)) != -1)
-                    fos.write(buf, 0, size);
-                fos.close();
-                bis.close();
-                ToMp3(ConstantUtil.AMR_TOMP3_WINDOWSPATH, ConstantUtil.AMR_TOMP3_WINDOWSPATHTEMP + mediaName);
-                inputStream = new FileInputStream(new File(ConstantUtil.AMR_TOMP3_WINDOWSPATHTEMP+mediaNameMp3));
-                StringUtils.deleteFile(new File(ConstantUtil.AMR_TOMP3_WINDOWSPATHTEMP));
-            }else if(ConstantUtil.AMR_TOMP3_FUNC.equals("linux")){
-                FileOutputStream fos = new FileOutputStream(ConstantUtil.AMR_TOMP3_LINUXPATH+mediaNameAmr);
-                byte[] buf = new byte[8096];
-                int size = 0;
-                while ((size = bis.read(buf)) != -1)
-                    fos.write(buf, 0, size);
-                fos.close();
-                bis.close();
-                ToMp3(ConstantUtil.AMR_TOMP3_WINDOWSPATH, ConstantUtil.AMR_TOMP3_LINUXPATH + mediaName);
-                inputStream = new FileInputStream(new File(ConstantUtil.AMR_TOMP3_LINUXPATH+mediaNameMp3));
-                StringUtils.deleteFile(new File(ConstantUtil.AMR_TOMP3_LINUXPATH));
-            }
-            mediaName = mediaNameMp3;
-        }else if(messageType.contains("video")){
-            mediaName = mediaName+".mp4";
-        }
-
-        //上传图片到阿里云
-        OSSObjectTool.uploadFileInputStream(mediaName, picLen, inputStream, OSSObjectTool.BUCKET_CONSULT_PIC);
-
-        String mediaURL = OSSObjectTool.getConsultMediaBaseUrl()+ mediaName;
-        return mediaURL;
-    }
 
     public void ToMp3(String webroot, String sourcePath){
         String targetPath = sourcePath+".mp3";//转换后文件的存储地址，直接将原来的文件名后加mp3后缀名

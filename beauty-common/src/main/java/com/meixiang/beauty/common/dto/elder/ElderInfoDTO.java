@@ -1,6 +1,6 @@
 package com.meixiang.beauty.common.dto.elder;
 
-import com.meixiang.beauty.common.dto.UserInfoDTO;
+import com.meixiang.beauty.common.dto.system.UserInfoDTO;
 import com.alibaba.fastjson.annotation.JSONField;
 
 public class ElderInfoDTO {

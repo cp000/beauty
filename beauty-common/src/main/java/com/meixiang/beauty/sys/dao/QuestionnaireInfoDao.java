@@ -3,7 +3,6 @@
  */
 package com.meixiang.beauty.sys.dao;
 
-import com.meixiang.beauty.common.dto.QuestionnaireInfoDTO;
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
 import org.springframework.stereotype.Repository;
 

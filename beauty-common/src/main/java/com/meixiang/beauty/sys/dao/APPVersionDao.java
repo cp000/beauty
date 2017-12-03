@@ -3,7 +3,6 @@
  */
 package com.meixiang.beauty.sys.dao;
 
-import com.meixiang.beauty.common.dto.APPVersionDTO;
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;

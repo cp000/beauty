@@ -5,7 +5,6 @@ package com.meixiang.beauty.common.persistence;
 
 import java.util.Date;
 
-import com.meixiang.beauty.sys.entity.User;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.validator.constraints.Length;
 

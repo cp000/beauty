@@ -1,6 +1,6 @@
 package com.meixiang.beauty.modules.agents.dao;
 
-import com.meixiang.beauty.common.dto.PageParamDTO;
+import com.meixiang.beauty.common.dto.system.PageParamDTO;
 import com.meixiang.beauty.common.dto.course.*;
 import com.meixiang.beauty.common.persistence.Page;
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;

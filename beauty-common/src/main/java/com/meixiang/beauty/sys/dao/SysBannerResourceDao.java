@@ -3,7 +3,7 @@
  */
 package com.meixiang.beauty.sys.dao;
 
-import com.meixiang.beauty.common.dto.BannerResourceDTO;
+import com.meixiang.beauty.common.dto.system.BannerResourceDTO;
 import com.meixiang.beauty.common.persistence.Page;
 import com.meixiang.beauty.common.persistence.annotation.MyBatisDao;
 import org.springframework.stereotype.Repository;

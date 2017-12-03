@@ -11,7 +11,6 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 
 import com.meixiang.beauty.sys.interceptor.SystemServiceLog;
-import com.meixiang.beauty.sys.entity.User;
 import com.meixiang.beauty.common.config.Global;
 import com.meixiang.beauty.common.security.shiro.session.SessionDAO;
 import com.meixiang.beauty.common.utils.CacheUtils;

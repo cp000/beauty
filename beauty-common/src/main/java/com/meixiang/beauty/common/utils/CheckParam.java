@@ -4,7 +4,7 @@
 package com.meixiang.beauty.common.utils;
 
 import com.meixiang.beauty.common.dto.practitioner.member.MemberDTO;
-import com.meixiang.beauty.common.dto.PageParamDTO;
+import com.meixiang.beauty.common.dto.system.PageParamDTO;
 
 /**
  * Cache工具类

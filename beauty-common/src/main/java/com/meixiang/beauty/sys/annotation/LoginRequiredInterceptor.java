@@ -4,9 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import com.meixiang.beauty.common.constant.ConfigConstant;
 import com.meixiang.beauty.common.constant.StatusConstant;
-import com.meixiang.beauty.common.dto.ResponseDTO;
+import com.meixiang.beauty.common.dto.system.ResponseDTO;
 import com.meixiang.beauty.common.utils.JedisUtils;
-import com.meixiang.beauty.sys.entity.User;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.web.context.request.RequestContextHolder;

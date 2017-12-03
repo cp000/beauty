@@ -74,29 +74,4 @@ public class OSSObjectTool {
         }
     }
 
-    /**
-     * 获取医生头像的 base url, 注 base url + key = full url
-     * @return
-     */
-    public static String getDoctorPicBaseUrl(){
-        return "http://xiaoerke-doctor-pic.oss-cn-beijing.aliyuncs.com/";
-    }
-
-    public static String getConsultMediaBaseUrl(){
-        http://xiaoerke-common-pic.oss-cn-beijing.aliyuncs.com/
-        return "http://xiaoerke-common-pic.oss-cn-beijing.aliyuncs.com/";
-    }
-
-    public static Map<String,String> getObject(String bucketName, String key)
-            throws OSSException, ClientException, FileNotFoundException {
-        //OSSObject ossObject = ossClient.getObject(bucketName, key);
-        return null;
-    }
-
-    public static void main(String[] args) throws Exception {
-        String file = "D:\\5.png";
-        File f = new File(file);
-        String bucket =  Global.getConfig("oss.bucket.doctor.pic");
-        uploadFileInputStream("123", f.length(), new FileInputStream(f), bucket);
-    }
 }

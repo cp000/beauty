@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.meixiang.beauty.common.config.Global;
 import com.meixiang.beauty.sys.entity.Area;
-import com.meixiang.beauty.sys.entity.User;
 import com.meixiang.beauty.sys.security.SystemAuthorizingRealm;
 import com.meixiang.beauty.sys.entity.Office;
 import org.apache.shiro.session.Session;

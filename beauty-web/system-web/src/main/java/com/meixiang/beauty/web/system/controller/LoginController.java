@@ -4,17 +4,21 @@
 package com.meixiang.beauty.web.system.controller;
 
 import com.meixiang.beauty.common.constant.StatusConstant;
-import com.meixiang.beauty.common.dto.LoginDto;
-import com.meixiang.beauty.common.dto.ResponseDTO;
-import com.meixiang.beauty.common.dto.UserInfoDTO;
+import com.meixiang.beauty.common.dto.system.LoginDTO;
+import com.meixiang.beauty.common.dto.system.ResponseDTO;
+import com.meixiang.beauty.common.dto.system.UserInfoDTO;
+import com.meixiang.beauty.common.dto.wechat.WeixinTokenDTO;
+import com.meixiang.beauty.common.utils.WechatUtil;
 import com.meixiang.beauty.common.web.BaseController;
+import com.meixiang.beauty.modules.system.api.SystemService;
+import com.meixiang.beauty.modules.system.api.UserService;
 import com.meixiang.beauty.sys.annotation.LoginRequired;
-import com.meixiang.beauty.sys.entity.User;
-import com.meixiang.beauty.sys.service.UserService;
+import com.meixiang.beauty.sys.entity.WechatBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -25,67 +29,59 @@ import java.util.concurrent.locks.ReentrantLock;
  * @version 2017-5-5
  */
 @Controller
+@RequestMapping(value = "system")
 public class LoginController extends BaseController {
 
-
-    private static Lock lock = new ReentrantLock();
 
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private SystemService systemService;
+
 
     /**
-     * 登录实现
+     * 用户通过微信中的H5，实现手机号绑定登录
      */
-    @RequestMapping(value = "laoyou/login", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "login", method = {RequestMethod.POST, RequestMethod.GET})
     public
     @ResponseBody
-    ResponseDTO<LoginDto> login(@RequestBody UserInfoDTO userInfoDto, HttpServletRequest request) throws Exception {
-        LoginDto loginDto = userService.login(userInfoDto.getPhoneNum(), userInfoDto.getIdentifyNum(), userInfoDto.getSource(), request.getRemoteAddr().toString(), request);
-        ResponseDTO<LoginDto> result = new ResponseDTO<LoginDto>();
-        if (loginDto == null) {
+    ResponseDTO<String> login(@RequestBody LoginDTO loginDTO,
+                                HttpServletRequest request,
+                                HttpSession session) throws Exception {
+
+        //获取用户的基本信息
+        String openid = WechatUtil.getOpenId(session,request);
+        WeixinTokenDTO weixinTokenDTO = systemService.getWeixinParameter();
+        WechatBean wechatBean = WechatUtil.getWechatName(weixinTokenDTO.getToken(),openid);
+
+        String loginResult = userService.login(loginDTO.getUserPhone(), loginDTO.getCode(), request.getRemoteAddr().toString(),wechatBean);
+        ResponseDTO<String> result = new ResponseDTO<>();
+
+        if (loginResult.equals(StatusConstant.VALIDATECODE_ERROR))
+        {
             result.setResult(StatusConstant.FAILURE);
             result.setErrorInfo("验证码输入不正确");
             return result;
-        } else if (loginDto.getLoginToken().equals("00000")) {
-            result.setResult(StatusConstant.LOGIN_ERROR);
-            result.setErrorInfo("用户不存在");
-            result.setResponseData(loginDto);
-            return result;
-        } else {
+        }
+        else
+        {
             result.setResult(StatusConstant.SUCCESS);
             result.setErrorInfo("调用成功");
-            result.setResponseData(loginDto);
+            result.setResponseData(loginResult);
             return result;
         }
     }
 
     /**
-     * 登录实现
-     */
-    @RequestMapping(value = "laoyou/getUser", method = {RequestMethod.POST, RequestMethod.GET})
-    @LoginRequired
-    public
-    @ResponseBody
-    ResponseDTO<User> getUser(HttpServletRequest request) throws Exception {
-        User user = userService.updateRedisUser(request);
-        ResponseDTO<User> result = new ResponseDTO<User>();
-        result.setResult(StatusConstant.SUCCESS);
-        result.setErrorInfo("调用成功");
-        result.setResponseData(user);
-        return result;
-    }
-
-
-    /**
      * 退出登录
      */
-    @RequestMapping(value = "laoyou/loginout", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "loginout", method = {RequestMethod.POST, RequestMethod.GET})
     @LoginRequired
     public
     @ResponseBody
     ResponseDTO<UserInfoDTO> loginout(HttpServletRequest request) {
-        String loginToken=request.getHeader("logintoken");
+        String loginToken = request.getHeader("logintoken");
         if(loginToken==null||loginToken.equals("")){
             loginToken=request.getSession().getAttribute("token").toString();
         }
@@ -97,29 +93,14 @@ public class LoginController extends BaseController {
     }
 
     /**
-     * 发送心跳包检测登录状态
-     */
-    @RequestMapping(value = "laoyou/offline", method = {RequestMethod.POST, RequestMethod.GET})
-    @LoginRequired
-    public
-    @ResponseBody
-    ResponseDTO<UserInfoDTO> offline(HttpServletRequest request) {
-        String status = userService.offline(request.getHeader("logintoken"));
-        ResponseDTO<UserInfoDTO> result = new ResponseDTO<UserInfoDTO>();
-        result.setResult(status);
-        result.setErrorInfo(status.equals(StatusConstant.OFFLINE) ? "强制下线" : "保持在线");
-        return result;
-    }
-
-    /**
      * 发送验证码
      */
-    @RequestMapping(value = "laoyou/sendIdentifying", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "sendIdentifying", method = {RequestMethod.POST, RequestMethod.GET})
     public
     @ResponseBody
-    ResponseDTO<UserInfoDTO> sendIdentifying(@RequestBody UserInfoDTO userInfoDto) {
-        ResponseDTO<UserInfoDTO> result = new ResponseDTO<UserInfoDTO>();
-        result.setResult(userService.sendMessage(userInfoDto.getPhoneNum()));
+    ResponseDTO sendIdentifying(@RequestBody UserInfoDTO userInfoDto) {
+        ResponseDTO result = new ResponseDTO<>();
+        result.setResult(userService.sendMessage(userInfoDto.getMobile()));
         return result;
     }
 }

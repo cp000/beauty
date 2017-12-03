@@ -15,7 +15,6 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.meixiang.beauty.modules.account.api.DeviceService;
 import com.meixiang.beauty.sys.dao.UserDao;
-import com.meixiang.beauty.sys.entity.User;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

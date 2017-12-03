@@ -5,7 +5,7 @@ package com.meixiang.beauty.common.utils;
  */
 
 
-import com.meixiang.beauty.common.dto.wechat.WechatConfigDTO;
+import com.meixiang.beauty.common.dto.wechat.WeixinConfigDTO;
 import org.apache.log4j.Logger;
 
 import java.io.UnsupportedEncodingException;
@@ -23,8 +23,8 @@ public class JsApiTicketUtil {
      * @param url
      * @return
      */
-    public static WechatConfigDTO sign(String jsapi_ticket, String url) {
-        WechatConfigDTO ret = new WechatConfigDTO();
+    public static WeixinConfigDTO sign(String jsapi_ticket, String url) {
+        WeixinConfigDTO ret = new WeixinConfigDTO();
         String nonce_str = create_nonce_str();
         String timestamp = create_timestamp();
 

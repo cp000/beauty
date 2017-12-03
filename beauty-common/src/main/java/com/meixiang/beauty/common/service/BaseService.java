@@ -6,7 +6,6 @@ package com.meixiang.beauty.common.service;
 import java.util.List;
 
 import com.meixiang.beauty.common.utils.StringUtils;
-import com.meixiang.beauty.sys.entity.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.transaction.annotation.Transactional;

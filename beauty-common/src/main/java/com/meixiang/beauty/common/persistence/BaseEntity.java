@@ -12,7 +12,6 @@ import com.meixiang.beauty.common.config.Global;
 import com.meixiang.beauty.common.supcan.annotation.treelist.SupTreeList;
 import com.meixiang.beauty.common.supcan.annotation.treelist.cols.SupCol;
 import com.meixiang.beauty.common.utils.StringUtils;
-import com.meixiang.beauty.sys.entity.User;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 
 import com.meixiang.beauty.sys.utils.UserUtils;

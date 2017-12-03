@@ -5,7 +5,6 @@ package com.meixiang.beauty.sys.utils;
 
 import com.meixiang.beauty.common.constant.ConfigConstant;
 import com.meixiang.beauty.common.utils.JedisUtils;
-import com.meixiang.beauty.sys.entity.User;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;

@@ -9,7 +9,7 @@
 	</insert>
 
 
-    <select id="getBannerResourcePage" resultType="com.meixiang.beauty.common.dto.BannerResourceDTO">
+    <select id="getBannerResourcePage" resultType="com.meixiang.beauty.common.dto.system.BannerResourceDTO">
         SELECT * FROM `sys_banner_resource` where
         del_flage!=1
         <if test="searchValue != null and searchValue !='' ">

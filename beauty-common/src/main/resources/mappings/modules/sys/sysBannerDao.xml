@@ -10,7 +10,7 @@
 
 
 
-	<select id="getBanner" resultType="com.meixiang.beauty.common.dto.BannerDTO">
+	<select id="getBanner" resultType="com.meixiang.beauty.common.dto.system.BannerDTO">
 		SELECT sbr.app,sbr.name as type,sb.* FROM `sys_banner`  sb
 		left join sys_banner_resource sbr on sbr.id=sb.bannerResourceID
 		where
@@ -27,7 +27,7 @@
 		ORDER by weights
 	</select>
 
-	<select id="getBannerList" resultType="com.meixiang.beauty.common.dto.BannerDTO">
+	<select id="getBannerList" resultType="com.meixiang.beauty.common.dto.system.BannerDTO">
 		SELECT * FROM `sys_banner` where
 		1=1
 		<if test="type != null and type !='' ">

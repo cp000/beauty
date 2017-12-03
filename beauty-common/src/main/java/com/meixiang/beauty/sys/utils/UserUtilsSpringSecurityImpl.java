@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.meixiang.beauty.common.utils.CacheUtils;
-import com.meixiang.beauty.sys.entity.User;
 import com.meixiang.beauty.common.utils.SpringContextHolder;
 import com.meixiang.beauty.sys.entity.Area;
 import com.meixiang.beauty.sys.service.SystemService;

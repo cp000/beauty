@@ -13,7 +13,6 @@ import com.meixiang.beauty.sys.dao.SysElderUserDao;
 import com.meixiang.beauty.sys.dao.SysPractitionerUserDao;
 import com.meixiang.beauty.sys.dao.UserDao;
 import com.meixiang.beauty.sys.entity.EasemobGroup;
-import com.meixiang.beauty.sys.entity.User;
 import com.meixiang.beauty.sys.service.EasemobService;
 import com.meixiang.beauty.sys.service.UserService;
 import com.meixiang.beauty.sys.utils.UUIDUtil;

@@ -1,7 +1,7 @@
 package com.meixiang.beauty.web.weixin.controller;
 
-import com.meixiang.beauty.common.dto.ResponseDTO;
-import com.meixiang.beauty.common.dto.wechat.WechatConfigDTO;
+import com.meixiang.beauty.common.dto.system.ResponseDTO;
+import com.meixiang.beauty.common.dto.wechat.WeixinConfigDTO;
 import com.meixiang.beauty.common.utils.*;
 import com.meixiang.beauty.common.web.BaseController;
 import com.meixiang.beauty.modules.wechat.api.WechatCoreService;
@@ -234,13 +234,13 @@ public class WeixinController extends BaseController {
     @RequestMapping(value = "wechatInfo/getConfig", method = RequestMethod.GET)
     public
     @ResponseBody
-    ResponseDTO<WechatConfigDTO> getConfig(HttpServletRequest request) throws Exception
+    ResponseDTO<WeixinConfigDTO> getConfig(HttpServletRequest request) throws Exception
     {
-        ResponseDTO<WechatConfigDTO> wechatConfigDTOResponseDTO = new ResponseDTO<>();
+        ResponseDTO<WeixinConfigDTO> wechatConfigDTOResponseDTO = new ResponseDTO<>();
         String u = request.getParameter("url");
         Map<String, Object> parameter = systemService.getWechatParameter();
         String ticket = (String) parameter.get("ticket");
-        WechatConfigDTO wechatConfigDTO = JsApiTicketUtil.sign(ticket, u);
+        WeixinConfigDTO wechatConfigDTO = JsApiTicketUtil.sign(ticket, u);
         wechatConfigDTOResponseDTO.setResponseData(wechatConfigDTO);
         return wechatConfigDTOResponseDTO;
     }

@@ -1,6 +1,6 @@
 package com.meixiang.beauty.modules.account.api.impl;
 
-import com.meixiang.beauty.common.dto.ResponseDTO;
+import com.meixiang.beauty.common.dto.system.ResponseDTO;
 import com.meixiang.beauty.common.dto.practitioner.detection.DetectionDTO;
 import com.meixiang.beauty.common.dto.practitioner.test.TestReportDTO;
 import com.meixiang.beauty.common.dto.practitioner.treatment.TreatmentDTO;

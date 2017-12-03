@@ -12,6 +12,6 @@ public class StatusConstant {
 	public static final String PARAM_ERROR = "0x00007";
 	public static final String Medication_ERROR="0x00008";
 	public static final String Diet_ERROR="0x00009";
-
+	public static final String VALIDATECODE_ERROR = "0x00010";
 
 }

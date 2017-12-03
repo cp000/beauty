@@ -2,7 +2,6 @@ package com.meixiang.beauty.modules.transaction.api;
 
 
 import com.meixiang.beauty.common.dto.survey.*;
-import com.meixiang.beauty.sys.entity.User;
 
 import java.util.List;
 

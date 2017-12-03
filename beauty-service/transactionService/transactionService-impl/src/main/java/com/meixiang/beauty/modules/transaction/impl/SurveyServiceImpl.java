@@ -4,7 +4,6 @@ import com.meixiang.beauty.common.dto.survey.*;
 import com.meixiang.beauty.common.utils.DateUtils;
 import com.meixiang.beauty.modules.transaction.dao.TransactionDao;
 import com.meixiang.beauty.modules.transaction.api.SurveyService;
-import com.meixiang.beauty.sys.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
