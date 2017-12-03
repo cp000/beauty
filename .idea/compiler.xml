@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="activityService-api" />
-        <module name="activityService-impl" />
+        <module name="account-web" />
+        <module name="accountService-api" />
+        <module name="accountService-impl" />
+        <module name="agents-web" />
+        <module name="agentsService-api" />
+        <module name="agentsService-impl" />
         <module name="beauty-common" />
         <module name="business" />
         <module name="common-web" />
@@ -21,15 +25,39 @@
         <module name="management" />
         <module name="myService-api" />
         <module name="myService-impl" />
+        <module name="product-web" />
+        <module name="productService-api" />
+        <module name="productService-impl" />
+        <module name="system-web" />
+        <module name="systemService-api" />
+        <module name="systemService-impl" />
+        <module name="training-web" />
+        <module name="trainingService-api" />
+        <module name="trainingService-impl" />
+        <module name="transaction-web" />
+        <module name="transactionService-api" />
+        <module name="transactionService-impl" />
+        <module name="wechat-web" />
         <module name="weChatService-api" />
         <module name="weChatService-impl" />
+        <module name="weixin-web" />
+        <module name="weixinService-api" />
+        <module name="weixinService-impl" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="account-web" target="1.8" />
+      <module name="accountService" target="1.8" />
+      <module name="accountService-api" target="1.8" />
+      <module name="accountService-impl" target="1.8" />
       <module name="activity-web" target="1.8" />
       <module name="activityService" target="1.8" />
       <module name="activityService-api" target="1.8" />
       <module name="activityService-impl" target="1.8" />
+      <module name="agents-web" target="1.8" />
+      <module name="agentsService" target="1.8" />
+      <module name="agentsService-api" target="1.8" />
+      <module name="agentsService-impl" target="1.8" />
       <module name="beauty" target="1.8" />
       <module name="beauty-common" target="1.8" />
       <module name="business" target="1.8" />
@@ -59,9 +87,30 @@
       <module name="notificationRemindService" target="1.8" />
       <module name="notificationRemindService-api" target="1.8" />
       <module name="notificationRemindService-impl" target="1.8" />
+      <module name="product-web" target="1.8" />
+      <module name="productService" target="1.8" />
+      <module name="productService-api" target="1.8" />
+      <module name="productService-impl" target="1.8" />
+      <module name="system-web" target="1.8" />
+      <module name="systemService" target="1.8" />
+      <module name="systemService-api" target="1.8" />
+      <module name="systemService-impl" target="1.8" />
+      <module name="training-web" target="1.8" />
+      <module name="trainingService" target="1.8" />
+      <module name="trainingService-api" target="1.8" />
+      <module name="trainingService-impl" target="1.8" />
+      <module name="transaction-web" target="1.8" />
+      <module name="transactionService" target="1.8" />
+      <module name="transactionService-api" target="1.8" />
+      <module name="transactionService-impl" target="1.8" />
+      <module name="wechat-web" target="1.8" />
       <module name="weChatService" target="1.8" />
       <module name="weChatService-api" target="1.8" />
       <module name="weChatService-impl" target="1.8" />
+      <module name="weixin-web" target="1.8" />
+      <module name="weixinService" target="1.8" />
+      <module name="weixinService-api" target="1.8" />
+      <module name="weixinService-impl" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

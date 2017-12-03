@@ -76,7 +76,7 @@ public class LoginController extends BaseController {
     /**
      * 退出登录
      */
-    @RequestMapping(value = "loginout", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "loginOut", method = {RequestMethod.POST, RequestMethod.GET})
     @LoginRequired
     public
     @ResponseBody
@@ -92,15 +92,4 @@ public class LoginController extends BaseController {
         return result;
     }
 
-    /**
-     * 发送验证码
-     */
-    @RequestMapping(value = "sendIdentifying", method = {RequestMethod.POST, RequestMethod.GET})
-    public
-    @ResponseBody
-    ResponseDTO sendIdentifying(@RequestBody UserInfoDTO userInfoDto) {
-        ResponseDTO result = new ResponseDTO<>();
-        result.setResult(userService.sendMessage(userInfoDto.getMobile()));
-        return result;
-    }
 }

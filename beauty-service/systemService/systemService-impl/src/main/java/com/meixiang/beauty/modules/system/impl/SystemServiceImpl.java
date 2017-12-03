@@ -3,6 +3,8 @@
  */
 package com.meixiang.beauty.modules.system.impl;
 
+import com.meixiang.beauty.common.constant.StatusConstant;
+import com.meixiang.beauty.common.dto.system.UserInfoDTO;
 import com.meixiang.beauty.common.dto.wechat.WeixinTokenDTO;
 import com.meixiang.beauty.modules.system.api.SystemService;
 import com.meixiang.beauty.sys.dao.SystemDao;
@@ -40,6 +42,22 @@ public class SystemServiceImpl implements SystemService {
 		Query query = new Query().addCriteria(Criteria.where("weixinFlag").is("businessOnlineOperation"));
 		List<WeixinTokenDTO> data = mongoTemplate.find(query, WeixinTokenDTO.class,"weixinParameter");
 		return data.get(0);
+	}
+
+	@Override
+	public String sendMessage(String phoneNum) {
+		try {
+			String num = null;//DaHanTricomSMSMessageUtil.sendIdentifying(phoneNum);
+			return StatusConstant.SUCCESS;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return StatusConstant.FAILURE;
+		}
+	}
+
+	@Override
+	public UserInfoDTO addSuggestion(String userId, String suggestion) {
+		return null;
 	}
 
 }

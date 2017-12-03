@@ -24,7 +24,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @date 2015-10-14
  */
 @Controller
-@RequestMapping(value = "product/")
+@RequestMapping(value = "product")
 public class ProductController {
 
 	private static Lock lock = new ReentrantLock();

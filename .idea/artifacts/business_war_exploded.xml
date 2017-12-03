@@ -31,42 +31,30 @@
           <element id="library" level="project" name="Maven: com.aliyun.opensearch:aliyun-sdk-opensearch:3.1.3" />
           <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-live:2.3.0" />
           <element id="library" level="project" name="Maven: com.aliyun:aliyun-java-sdk-core:3.2.2" />
-          <element id="archive" name="common-web-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="common-web" />
+          <element id="archive" name="system-web-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="system-web" />
           </element>
-          <element id="archive" name="healthService-api-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="healthService-api" />
+          <element id="archive" name="systemService-api-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="systemService-api" />
           </element>
-          <element id="archive" name="healthService-impl-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="healthService-impl" />
+          <element id="archive" name="systemService-impl-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="systemService-impl" />
           </element>
           <element id="library" level="project" name="Maven: org.checkerframework:jdk7:1.9.1" />
-          <element id="archive" name="myService-api-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="myService-api" />
+          <element id="archive" name="product-web-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="product-web" />
           </element>
-          <element id="archive" name="myService-impl-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="myService-impl" />
+          <element id="archive" name="productService-api-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="productService-api" />
           </element>
-          <element id="archive" name="healthDataService-api-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="healthDataService-api" />
+          <element id="archive" name="productService-impl-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="productService-impl" />
           </element>
-          <element id="archive" name="healthDataService-impl-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="healthDataService-impl" />
+          <element id="archive" name="weixinService-api-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="weixinService-api" />
           </element>
-          <element id="archive" name="activityService-api-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="activityService-api" />
-          </element>
-          <element id="archive" name="activityService-impl-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="activityService-impl" />
-          </element>
-          <element id="archive" name="weChatService-impl-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="weChatService-impl" />
-          </element>
-          <element id="archive" name="weChatService-api-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="weChatService-api" />
-          </element>
-          <element id="archive" name="health-web-0.0.1-SNAPSHOT.jar">
-            <element id="module-output" name="health-web" />
+          <element id="archive" name="weixinService-impl-0.0.1-SNAPSHOT.jar">
+            <element id="module-output" name="weixinService-impl" />
           </element>
           <element id="library" level="project" name="Maven: org.springframework:spring-core:4.0.8.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:4.0.8.RELEASE" />

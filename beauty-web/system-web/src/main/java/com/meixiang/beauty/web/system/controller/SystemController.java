@@ -5,9 +5,13 @@ package com.meixiang.beauty.web.system.controller;
 
 import com.meixiang.beauty.common.constant.StatusConstant;
 import com.meixiang.beauty.common.dto.system.ResponseDTO;
+import com.meixiang.beauty.common.dto.system.UserInfoDTO;
 import com.meixiang.beauty.common.utils.OSSObjectTool;
 import com.meixiang.beauty.common.web.BaseController;
+import com.meixiang.beauty.modules.system.api.SystemService;
+import com.meixiang.beauty.modules.system.api.UserService;
 import com.meixiang.beauty.sys.annotation.LoginRequired;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,7 +29,13 @@ import java.io.UnsupportedEncodingException;
  */
 @Controller
 @RequestMapping(value = "system")
-public class UtilController extends BaseController {
+public class SystemController extends BaseController {
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private SystemService systemService;
 
     /**
      * 上传文件
@@ -53,6 +63,44 @@ public class UtilController extends BaseController {
             response.setResult(StatusConstant.FAILURE);
         }
         return response;
+    }
+
+    /**
+     * 发送验证码
+     */
+    @RequestMapping(value = "sendIdentifying", method = {RequestMethod.POST, RequestMethod.GET})
+    public
+    @ResponseBody
+    ResponseDTO sendIdentifying(@RequestBody UserInfoDTO userInfoDto) {
+        ResponseDTO result = new ResponseDTO<>();
+        result.setResult(systemService.sendMessage(userInfoDto.getMobile()));
+        return result;
+    }
+
+    /**
+     * 发送登录用户的完整信息
+     */
+    @RequestMapping(value = "userInfo", method = {RequestMethod.POST, RequestMethod.GET})
+    public
+    @ResponseBody
+    ResponseDTO<UserInfoDTO> userInfo(@RequestParam String userId) {
+        ResponseDTO<UserInfoDTO> result = new ResponseDTO<>();
+        result.setResponseData(userService.getUserInfo(userId));
+        result.setResult(StatusConstant.SUCCESS);
+        return result;
+    }
+
+    /**
+     * 发送登录用户的完整信息
+     */
+    @RequestMapping(value = "suggestion", method = {RequestMethod.POST, RequestMethod.GET})
+    public
+    @ResponseBody
+    ResponseDTO suggestion(@RequestParam String userId,@RequestParam String suggestion) {
+        ResponseDTO<UserInfoDTO> result = new ResponseDTO<>();
+        result.setResponseData(systemService.addSuggestion(userId,suggestion));
+        result.setResult(StatusConstant.SUCCESS);
+        return result;
     }
 
 }

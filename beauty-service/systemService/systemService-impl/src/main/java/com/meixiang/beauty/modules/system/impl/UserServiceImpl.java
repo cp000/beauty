@@ -109,14 +109,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String sendMessage(String phoneNum) {
-        try {
-            String num = null;//DaHanTricomSMSMessageUtil.sendIdentifying(phoneNum);
-            return StatusConstant.SUCCESS;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return StatusConstant.FAILURE;
-        }
+    public UserInfoDTO getUserInfo(String userId) {
+        return null;
     }
 
 
