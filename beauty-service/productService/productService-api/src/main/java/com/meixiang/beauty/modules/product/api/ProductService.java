@@ -14,9 +14,17 @@ import java.util.List;
 @Service
 public interface ProductService {
 
-    List<ProductDTO> findProductList(PageParamDTO pageParamDTO);
+    List<ProductDTO<OfflineProductDTO>> findProductList(PageParamDTO pageParamDTO);
 
     OfflineProductDTO getOfflineProductDetailById(String productId);
 
     TrainingProductDTO getTrainingProductDetailById(String productId);
+
+    void addOfflineProduct(ProductDTO<OfflineProductDTO> productDTO);
+
+    void delOfflineProduct(String productId);
+
+    void updateOfflineProduct(ProductDTO<OfflineProductDTO> productDTO);
+
+    void updateTrainingProductDetail(TrainingProductDTO trainingProductDTO);
 }

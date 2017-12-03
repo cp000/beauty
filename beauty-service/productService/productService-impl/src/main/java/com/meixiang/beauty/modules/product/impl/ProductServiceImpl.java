@@ -23,7 +23,7 @@ public class ProductServiceImpl implements ProductService {
     protected MongoTemplate mongoTemplate;
 
     @Override
-    public List<ProductDTO> findProductList(PageParamDTO pageParamDTO) {
+    public List<ProductDTO<OfflineProductDTO>> findProductList(PageParamDTO pageParamDTO) {
         return null;
     }
 
@@ -35,5 +35,25 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public TrainingProductDTO getTrainingProductDetailById(String productId) {
         return null;
+    }
+
+    @Override
+    public void addOfflineProduct(ProductDTO<OfflineProductDTO> productDTO) {
+
+    }
+
+    @Override
+    public void delOfflineProduct(String productId) {
+
+    }
+
+    @Override
+    public void updateOfflineProduct(ProductDTO<OfflineProductDTO> productDTO) {
+
+    }
+
+    @Override
+    public void updateTrainingProductDetail(TrainingProductDTO trainingProductDTO) {
+
     }
 }

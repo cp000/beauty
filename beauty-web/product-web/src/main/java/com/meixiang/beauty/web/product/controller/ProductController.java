@@ -13,10 +13,7 @@ import com.meixiang.beauty.sys.annotation.LoginRequired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 关于账户管理
@@ -26,8 +23,6 @@ import java.util.concurrent.locks.ReentrantLock;
 @Controller
 @RequestMapping(value = "product")
 public class ProductController {
-
-	private static Lock lock = new ReentrantLock();
 
 	@Autowired
 	private ProductService productService;
@@ -40,15 +35,15 @@ public class ProductController {
 	 * output ResponseDTO<List<ProductDTO>>
 	 *
 	 */
-	@RequestMapping(value = "productList", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "offlineProductList", method = {RequestMethod.POST, RequestMethod.GET})
 	@LoginRequired
 	public
 	@ResponseBody
-	ResponseDTO<List<ProductDTO>> productList(@RequestBody PageParamDTO<String> pageParamDTO) {
+	ResponseDTO<List<ProductDTO<OfflineProductDTO>>> offlineProductList(@RequestBody PageParamDTO<OfflineProductDTO> pageParamDTO) {
 		DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
-		ResponseDTO<List<ProductDTO>> responseDTO = new ResponseDTO<>();
+		ResponseDTO<List<ProductDTO<OfflineProductDTO>>> responseDTO = new ResponseDTO<>();
 		//pageParamDTO.getRequestData()为String类型，为"all"的时候表示任意类型，"training"为培训课程,"offline"为线下产品
-		List<ProductDTO> productDTOList = productService.findProductList(pageParamDTO);
+		List<ProductDTO<OfflineProductDTO>> productDTOList = productService.findProductList(pageParamDTO);
 		responseDTO.setResponseData(productDTOList);
 		responseDTO.setResult(StatusConstant.SUCCESS);
 		return responseDTO;
@@ -77,6 +72,66 @@ public class ProductController {
 	}
 
 	/**
+	 * 上架商品
+	 *
+	 * input PageParamDto
+	 *
+	 * output ResponseDTO<List<ProductDTO>>
+	 *
+	 */
+	@RequestMapping(value = "addOfflineProduct", method = {RequestMethod.POST, RequestMethod.GET})
+	@LoginRequired
+	public
+	@ResponseBody
+	ResponseDTO addOfflineProduct(@RequestBody ProductDTO<OfflineProductDTO> productDTO) {
+		DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
+		ResponseDTO responseDTO = new ResponseDTO<>();
+		productService.addOfflineProduct(productDTO);
+		responseDTO.setResult(StatusConstant.SUCCESS);
+		return responseDTO;
+	}
+
+	/**
+	 * 修改商品
+	 *
+	 * input PageParamDto
+	 *
+	 * output ResponseDTO<List<ProductDTO>>
+	 *
+	 */
+	@RequestMapping(value = "updateOfflineProduct", method = {RequestMethod.POST, RequestMethod.GET})
+	@LoginRequired
+	public
+	@ResponseBody
+	ResponseDTO updateOfflineProduct(@RequestBody ProductDTO<OfflineProductDTO> productDTO) {
+		DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
+		ResponseDTO responseDTO = new ResponseDTO<>();
+		productService.updateOfflineProduct(productDTO);
+		responseDTO.setResult(StatusConstant.SUCCESS);
+		return responseDTO;
+	}
+
+	/**
+	 * 下架商品
+	 *
+	 * input PageParamDto
+	 *
+	 * output ResponseDTO<List<ProductDTO>>
+	 *
+	 */
+	@RequestMapping(value = "delOfflineProduct", method = {RequestMethod.POST, RequestMethod.GET})
+	@LoginRequired
+	public
+	@ResponseBody
+	ResponseDTO delOfflineProduct(@RequestParam String productId) {
+		DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
+		ResponseDTO responseDTO = new ResponseDTO<>();
+		productService.delOfflineProduct(productId);
+		responseDTO.setResult(StatusConstant.SUCCESS);
+		return responseDTO;
+	}
+
+	/**
 	 * 获取培训商品的详细信息
 	 *
 	 * input PageParamDto
@@ -96,5 +151,27 @@ public class ProductController {
 		responseDTO.setResult(StatusConstant.SUCCESS);
 		return responseDTO;
 	}
+
+	/**
+	 * 获取培训商品的详细信息
+	 *
+	 * input PageParamDto
+	 *
+	 * output ResponseDTO<List<ProductDTO>>
+	 *
+	 */
+	@RequestMapping(value = "updateTrainingProductDetail", method = {RequestMethod.POST, RequestMethod.GET})
+	@LoginRequired
+	public
+	@ResponseBody
+	ResponseDTO trainingProductDetail(@RequestBody TrainingProductDTO trainingProductDTO) {
+		DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
+		ResponseDTO responseDTO = new ResponseDTO<>();
+		productService.updateTrainingProductDetail(trainingProductDTO);
+		responseDTO.setResult(StatusConstant.SUCCESS);
+		return responseDTO;
+	}
+
+
 
 }
