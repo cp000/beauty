@@ -19,37 +19,37 @@ public class UserInfoDTO {
     @JSONField(name = "email")
     private String email;
 
-    @JSONField(name = "identify_number")
-    private String identify_number;
+    @JSONField(name = "identifyNumber")
+    private String identifyNumber;
 
     @JSONField(name = "mobile")
     private String mobile;
 
-    @JSONField(name = "user_type")
-    private String user_type;
+    @JSONField(name = "userType")
+    private String userType;
 
-    @JSONField(name = "user_openid")
-    private String user_openid;
+    @JSONField(name = "userOpenid")
+    private String userOpenid;
 
-    @JSONField(name = "parent_user_id")
-    private String parent_user_id;
+    @JSONField(name = "parentUserId")
+    private String parentUserId;
 
-    @JSONField(name = "weixin_attention_status")
-    private String weixin_attention_status;
+    @JSONField(name = "weixinAttentionStatus")
+    private String weixinAttentionStatus;
 
     @JSONField(name = "photo")
     private String photo;
 
-    @JSONField(name = "login_ip")
+    @JSONField(name = "loginIp")
     private String login_ip;
 
-    @JSONField(name = "login_date")
+    @JSONField(name = "loginDate")
     private Date login_date;
 
-    @JSONField(name = "create_date")
+    @JSONField(name = "createDate")
     private Date create_date;
 
-    @JSONField(name = "del_flag")
+    @JSONField(name = "delFlag")
     private String del_flag;
 
     public String getId() {
@@ -84,12 +84,12 @@ public class UserInfoDTO {
         this.email = email;
     }
 
-    public String getIdentify_number() {
-        return identify_number;
+    public String getIdentifyNumber() {
+        return identifyNumber;
     }
 
-    public void setIdentify_number(String identify_number) {
-        this.identify_number = identify_number;
+    public void setIdentifyNumber(String identifyNumber) {
+        this.identifyNumber = identifyNumber;
     }
 
     public String getMobile() {
@@ -100,36 +100,36 @@ public class UserInfoDTO {
         this.mobile = mobile;
     }
 
-    public String getUser_type() {
-        return user_type;
+    public String getUserType() {
+        return userType;
     }
 
-    public void setUser_type(String user_type) {
-        this.user_type = user_type;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
-    public String getUser_openid() {
-        return user_openid;
+    public String getUserOpenid() {
+        return userOpenid;
     }
 
-    public void setUser_openid(String user_openid) {
-        this.user_openid = user_openid;
+    public void setUserOpenid(String userOpenid) {
+        this.userOpenid = userOpenid;
     }
 
-    public String getParent_user_id() {
-        return parent_user_id;
+    public String getParentUserId() {
+        return parentUserId;
     }
 
-    public void setParent_user_id(String parent_user_id) {
-        this.parent_user_id = parent_user_id;
+    public void setParentUserId(String parentUserId) {
+        this.parentUserId = parentUserId;
     }
 
-    public String getWeixin_attention_status() {
-        return weixin_attention_status;
+    public String getWeixinAttentionStatus() {
+        return weixinAttentionStatus;
     }
 
-    public void setWeixin_attention_status(String weixin_attention_status) {
-        this.weixin_attention_status = weixin_attention_status;
+    public void setWeixinAttentionStatus(String weixinAttentionStatus) {
+        this.weixinAttentionStatus = weixinAttentionStatus;
     }
 
     public String getPhoto() {

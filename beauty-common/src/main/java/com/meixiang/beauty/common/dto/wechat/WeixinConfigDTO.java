@@ -10,8 +10,8 @@ public class WeixinConfigDTO {
     @JSONField(name = "url")
     private String url;
 
-    @JSONField(name = "jsapi_ticket")
-    private String jsapi_ticket;
+    @JSONField(name = "jsapiTicket")
+    private String jsapiTicket;
 
     @JSONField(name = "nonceStr")
     private String nonceStr;
@@ -33,12 +33,12 @@ public class WeixinConfigDTO {
         this.url = url;
     }
 
-    public String getJsapi_ticket() {
-        return jsapi_ticket;
+    public String getJsapiTicket() {
+        return jsapiTicket;
     }
 
-    public void setJsapi_ticket(String jsapi_ticket) {
-        this.jsapi_ticket = jsapi_ticket;
+    public void setJsapiTicket(String jsapiTicket) {
+        this.jsapiTicket = jsapiTicket;
     }
 
     public String getNonceStr() {

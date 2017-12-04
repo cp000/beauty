@@ -11,6 +11,7 @@ public class BusinessOrderDTO {
     @JSONField(name = "sysUserId")
     private String sysUserId;
 
+    //订单编号ID
     @JSONField(name = "businessOrderId")
     private String businessOrderId;
 
@@ -30,7 +31,7 @@ public class BusinessOrderDTO {
     private ProductDTO businessProduct;
 
     @JSONField(name = "businessOrderAddress")
-    private ProductDTO businessOrderAddress;
+    private UserOrderAddressDTO businessOrderAddress;
 
     public String getSysUserId() {
         return sysUserId;
@@ -88,11 +89,11 @@ public class BusinessOrderDTO {
         this.businessProduct = businessProduct;
     }
 
-    public ProductDTO getBusinessOrderAddress() {
+    public UserOrderAddressDTO getBusinessOrderAddress() {
         return businessOrderAddress;
     }
 
-    public void setBusinessOrderAddress(ProductDTO businessOrderAddress) {
+    public void setBusinessOrderAddress(UserOrderAddressDTO businessOrderAddress) {
         this.businessOrderAddress = businessOrderAddress;
     }
 }

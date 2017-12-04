@@ -11,6 +11,9 @@ public class ProductDTO<T> {
     @JSONField(name = "productName")
     private String productName;
 
+    @JSONField(name = "productId")
+    private String productId;
+
     //type为course表示产品类型课程类，offline表示为线下产品
     @JSONField(name = "type")
     private String type;
@@ -41,6 +44,14 @@ public class ProductDTO<T> {
 
     public void setProductName(String productName) {
         this.productName = productName;
+    }
+
+    public String getProductId() {
+        return productId;
+    }
+
+    public void setProductId(String productId) {
+        this.productId = productId;
     }
 
     public String getType() {
