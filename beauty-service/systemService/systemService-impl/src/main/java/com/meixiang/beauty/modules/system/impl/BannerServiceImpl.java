@@ -21,23 +21,17 @@ public class BannerServiceImpl implements BannerService {
     @Autowired
     private SysBannerDao sysBannerDao;
 
-    @Autowired
-    private SysBannerResourceDao sysBannerResourceDao;
-
     @Override
-    public Integer addBanner(BannerDTO bannerDTO) {
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        if (simpleDateFormat.format(date).equals(simpleDateFormat.format(bannerDTO.getStartDate()))) {
-            List<BannerDTO> list = sysBannerDao.getBannerList();
-            if (list.size()>0) {
-                BannerDTO bannerDTO1=list.get(0);
-                bannerDTO1.setStatus("1");
-                sysBannerDao.bannerOff(bannerDTO1);
-            }
-            bannerDTO.setStatus("0");
+    @Transactional(rollbackFor = Exception.class)
+    public void addBanner(BannerDTO bannerDTO) throws Exception {
+        try{
+            sysBannerDao.addBanner(bannerDTO);
         }
-        return sysBannerDao.addBanner(bannerDTO);
+        catch (Exception e)
+        {
+            throw new Exception("添加banner图失败");
+        }
+
     }
 
     @Override
@@ -46,8 +40,8 @@ public class BannerServiceImpl implements BannerService {
     }
 
     @Override
-    public Integer bannerOff(BannerDTO bannerDTO) {
-        return sysBannerDao.bannerOff(bannerDTO);
+    public void delBanner(String bannerId) throws Exception{
+
     }
 
 }

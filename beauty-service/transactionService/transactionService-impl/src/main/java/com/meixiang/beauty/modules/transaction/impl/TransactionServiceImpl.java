@@ -3,12 +3,17 @@ package com.meixiang.beauty.modules.transaction.impl;
 import com.meixiang.beauty.common.dto.transaction.BusinessOrderDTO;
 import com.meixiang.beauty.common.dto.transaction.UserOrderAddressDTO;
 import com.meixiang.beauty.modules.transaction.api.TransactionService;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * Created by zbm84 on 2017/5/10.
  */
+
+@Service
+@Transactional(readOnly = false)
 public class TransactionServiceImpl implements TransactionService {
 
     @Override
@@ -22,11 +27,12 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public String addProductNumInBusinessOrder(String userId, String businessOrderId) {
-        return null;
+    public void updateProductNumInBusinessOrder(String userId, String businessOrderId,String operateType) throws Exception{
+
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void updateBusinessOrderStatus(List<BusinessOrderDTO> businessOrderDTOList) throws Exception{
     }
 
@@ -41,12 +47,19 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void addUserAddress(UserOrderAddressDTO userOrderAddressDTO) {
 
     }
 
     @Override
-    public void updateUserAddress(UserOrderAddressDTO userOrderAddressDTO) {
+    @Transactional(rollbackFor = Exception.class)
+    public void updateUserAddress(UserOrderAddressDTO userOrderAddressDTO) throws Exception{
+
+    }
+
+    @Override
+    public void createBusinessOrder(BusinessOrderDTO businessOrderDTO) throws Exception{
 
     }
 }

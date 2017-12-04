@@ -28,11 +28,11 @@ public class ProductController {
 	private ProductService productService;
 
 	/**
-	 * 获取商城首页的产品的列表，每次获取6条产品记录，前端下拉时记载更多的6条，此处不包括产品详情
+	 * 获取商城首页的线下产品的列表，每次获取6条产品记录，前端下拉时记载更多的6条，此处不包括产品详情
 	 *
 	 * input PageParamDto
 	 *
-	 * output ResponseDTO<List<ProductDTO>>
+	 * output ResponseDTO<List<ProductDTO<OfflineProductDTO>>>
 	 *
 	 */
 	@RequestMapping(value = "offlineProductList", method = {RequestMethod.POST, RequestMethod.GET})
@@ -42,7 +42,6 @@ public class ProductController {
 	ResponseDTO<List<ProductDTO<OfflineProductDTO>>> offlineProductList(@RequestBody PageParamDTO<OfflineProductDTO> pageParamDTO) {
 		DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
 		ResponseDTO<List<ProductDTO<OfflineProductDTO>>> responseDTO = new ResponseDTO<>();
-		//pageParamDTO.getRequestData()为String类型，为"all"的时候表示任意类型，"training"为培训课程,"offline"为线下产品
 		List<ProductDTO<OfflineProductDTO>> productDTOList = productService.findProductList(pageParamDTO);
 		responseDTO.setResponseData(productDTOList);
 		responseDTO.setResult(StatusConstant.SUCCESS);
@@ -55,7 +54,7 @@ public class ProductController {
 	 *
 	 * input PageParamDto
 	 *
-	 * output ResponseDTO<List<ProductDTO>>
+	 * output ResponseDTO<List<OfflineProductDTO>>
 	 *
 	 */
 	@RequestMapping(value = "offlineProductDetail", method = {RequestMethod.POST, RequestMethod.GET})

@@ -11,9 +11,9 @@ import java.util.List;
  */
 public interface BannerService {
 
-    Integer addBanner(BannerDTO bannerDTO);
+    void addBanner(BannerDTO bannerDTO) throws Exception;
 
     List<BannerDTO> getBannerList();
 
-    Integer bannerOff(BannerDTO bannerDTO);
+    void delBanner(String bannerId) throws Exception;
 }

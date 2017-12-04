@@ -77,7 +77,7 @@ public class LoginController extends BaseController {
      * 退出登录
      */
     @RequestMapping(value = "loginOut", method = {RequestMethod.POST, RequestMethod.GET})
-    @LoginRequired
+//    @LoginRequired
     public
     @ResponseBody
     ResponseDTO<UserInfoDTO> loginout(HttpServletRequest request) {

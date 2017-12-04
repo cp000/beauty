@@ -24,18 +24,46 @@ public class BannerController {
 	 *
 	 */
 	@RequestMapping(value = "addBanner", method = {RequestMethod.POST, RequestMethod.GET})
-	@LoginRequired
+//	@LoginRequired
 	public
 	@ResponseBody
-	ResponseDTO<BannerDTO> addBanner(@RequestBody BannerDTO bannerDTO, HttpServletRequest request) {
+	ResponseDTO addBanner(@RequestBody BannerDTO bannerDTO, HttpServletRequest request) {
 		ResponseDTO responseDto=new ResponseDTO<>();
-		if (bannerService.addBanner(bannerDTO)>0){
+		try{
+			bannerService.addBanner(bannerDTO);
 			responseDto.setResult(StatusConstant.SUCCESS);
 			responseDto.setErrorInfo("添加成功");
 			return responseDto;
-		}else {
+		}catch (Exception e)
+		{
 			responseDto.setResult(StatusConstant.FAILURE);
 			responseDto.setErrorInfo("添加失败");
+			e.printStackTrace();
+			return responseDto;
+		}
+	}
+
+	/**
+	 * 删除 Banner 图
+	 *
+	 */
+	@RequestMapping(value = "delBanner", method = {RequestMethod.POST, RequestMethod.GET})
+//	@LoginRequired
+	public
+	@ResponseBody
+	ResponseDTO delBanner(@RequestParam String bannerId, HttpServletRequest request) {
+		ResponseDTO responseDto=new ResponseDTO<>();
+
+		try{
+			bannerService.delBanner(bannerId);
+			responseDto.setResult(StatusConstant.SUCCESS);
+			responseDto.setErrorInfo("删除成功");
+			return responseDto;
+		}
+		catch (Exception e){
+			responseDto.setResult(StatusConstant.FAILURE);
+			responseDto.setErrorInfo("删除失败");
+			e.printStackTrace();
 			return responseDto;
 		}
 	}

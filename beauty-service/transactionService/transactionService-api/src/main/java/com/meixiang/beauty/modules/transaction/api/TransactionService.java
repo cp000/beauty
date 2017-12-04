@@ -14,7 +14,7 @@ public interface TransactionService {
 
     String getUserUnPayOrderNum(String userId);
 
-    String addProductNumInBusinessOrder(String userId, String businessOrderId);
+    void updateProductNumInBusinessOrder(String userId, String businessOrderId,String operateType) throws Exception;
 
     void updateBusinessOrderStatus(List<BusinessOrderDTO> businessOrderDTOList) throws Exception;
 
@@ -22,7 +22,9 @@ public interface TransactionService {
 
     List<UserOrderAddressDTO> getUserAddressList(String userId);
 
-    void addUserAddress(UserOrderAddressDTO userOrderAddressDTO);
+    void addUserAddress(UserOrderAddressDTO userOrderAddressDTO) throws Exception;
 
-    void updateUserAddress(UserOrderAddressDTO userOrderAddressDTO);
+    void updateUserAddress(UserOrderAddressDTO userOrderAddressDTO) throws Exception;
+
+    void createBusinessOrder(BusinessOrderDTO businessOrderDTO) throws Exception;
 }

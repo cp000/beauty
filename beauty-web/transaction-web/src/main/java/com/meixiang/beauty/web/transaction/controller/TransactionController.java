@@ -47,6 +47,36 @@ public class TransactionController {
     }
 
     /**
+     * 获取用户购物车中的信息
+     *
+     * input PageParamDto
+     *
+     * output ResponseDTO<List<ProductDTO>>
+     *
+     */
+    @RequestMapping(value = "createBusinessOrder", method = {RequestMethod.POST, RequestMethod.GET})
+    @LoginRequired
+    public
+    @ResponseBody
+    ResponseDTO createBusinessOrder(@RequestBody BusinessOrderDTO businessOrderDTO) {
+        DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
+        ResponseDTO responseDTO = new ResponseDTO<>();
+        try{
+            transactionService.createBusinessOrder(businessOrderDTO);
+            responseDTO.setResult(StatusConstant.SUCCESS);
+            responseDTO.setErrorInfo("订单创建成功");
+
+        }catch (Exception e){
+            responseDTO.setResult(StatusConstant.FAILURE);
+            responseDTO.setErrorInfo("订单创建失败");
+            e.printStackTrace();
+        }
+        return responseDTO;
+    }
+
+
+
+    /**
      * 获取用户购物车中未支付订单数量
      *
      * input PageParamDto
@@ -70,21 +100,30 @@ public class TransactionController {
     /**
      * 增加用户购物车中，某个订单的产品购买数量
      *
-     * input PageParamDto
+     * input userId,businessOrderId,operateType
+     * operateType有add和del两种操作模式
      *
      * output ResponseDTO<List<ProductDTO>>
      *
      */
-    @RequestMapping(value = "addProductNumInBusinessOrder", method = {RequestMethod.POST, RequestMethod.GET})
+    @RequestMapping(value = "updateProductNumInBusinessOrder", method = {RequestMethod.POST, RequestMethod.GET})
     @LoginRequired
     public
     @ResponseBody
-    ResponseDTO<String> addProductNumInBusinessOrder(@RequestParam String userId, @RequestParam String businessOrderId) {
+    ResponseDTO updateProductNumInBusinessOrder(@RequestParam String userId,
+                                                @RequestParam String businessOrderId,
+                                                @RequestParam String operateType) {
         DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
-        ResponseDTO<String> responseDTO = new ResponseDTO<>();
-        String productNum = transactionService.addProductNumInBusinessOrder(userId,businessOrderId);
-        responseDTO.setResponseData(productNum);
-        responseDTO.setResult(StatusConstant.SUCCESS);
+        ResponseDTO responseDTO = new ResponseDTO<>();
+        try{
+            transactionService.updateProductNumInBusinessOrder(userId,businessOrderId,operateType);
+            responseDTO.setErrorInfo("更新订单中的产品数量成功");
+            responseDTO.setResult(StatusConstant.SUCCESS);
+        }catch (Exception e){
+            responseDTO.setErrorInfo("更新订单中的产品数量失败");
+            responseDTO.setResult(StatusConstant.FAILURE);
+            e.printStackTrace();
+        }
         return responseDTO;
     }
 
@@ -157,6 +196,7 @@ public class TransactionController {
         DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
         ResponseDTO<List<UserOrderAddressDTO>> responseDTO = new ResponseDTO<>();
         List<UserOrderAddressDTO> userOrderAddressDTOList =  transactionService.getUserAddressList(userId);
+        responseDTO.setResponseData(userOrderAddressDTOList);
         responseDTO.setResult(StatusConstant.SUCCESS);
         return responseDTO;
     }
@@ -176,8 +216,15 @@ public class TransactionController {
     ResponseDTO addUserAddress(@RequestBody UserOrderAddressDTO userOrderAddressDTO) {
         DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
         ResponseDTO responseDTO = new ResponseDTO<>();
-        transactionService.addUserAddress(userOrderAddressDTO);
-        responseDTO.setResult(StatusConstant.SUCCESS);
+        try{
+            transactionService.addUserAddress(userOrderAddressDTO);
+            responseDTO.setResult(StatusConstant.SUCCESS);
+            responseDTO.setErrorInfo("添加用户地址成功");
+        }catch (Exception e)
+        {
+            responseDTO.setResult(StatusConstant.FAILURE);
+            responseDTO.setErrorInfo("添加用户地址失败");
+        }
         return responseDTO;
     }
 
@@ -196,8 +243,14 @@ public class TransactionController {
     ResponseDTO updateUserAddress(@RequestBody UserOrderAddressDTO userOrderAddressDTO) {
         DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
         ResponseDTO responseDTO = new ResponseDTO<>();
-        transactionService.updateUserAddress(userOrderAddressDTO);
-        responseDTO.setResult(StatusConstant.SUCCESS);
+        try{
+            transactionService.updateUserAddress(userOrderAddressDTO);
+            responseDTO.setResult(StatusConstant.SUCCESS);
+            responseDTO.setErrorInfo("更新用户收货地址成功");
+        }catch (Exception e){
+            responseDTO.setErrorInfo("更新用户收货地址失败");
+            responseDTO.setResult(StatusConstant.FAILURE);
+        }
         return responseDTO;
     }
 
