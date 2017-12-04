@@ -37,7 +37,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public List<BusinessOrderDTO> getBusinessOrderList(String userId, String status) {
+    public List<BusinessOrderDTO> getBusinessOrderList(String userId, String status,String businessOrderId) {
         return null;
     }
 
@@ -58,8 +58,10 @@ public class TransactionServiceImpl implements TransactionService {
 
     }
 
+    //返回订单的ID号
     @Override
-    public void createBusinessOrder(BusinessOrderDTO businessOrderDTO) throws Exception{
+    public String createBusinessOrder(BusinessOrderDTO businessOrderDTO) throws Exception{
 
+        return null;
     }
 }

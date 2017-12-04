@@ -47,7 +47,7 @@ public class TransactionController {
     }
 
     /**
-     * 获取用户购物车中的信息
+     * 购买某个商品，创建订单
      *
      * input PageParamDto
      *
@@ -58,11 +58,12 @@ public class TransactionController {
     @LoginRequired
     public
     @ResponseBody
-    ResponseDTO createBusinessOrder(@RequestBody BusinessOrderDTO businessOrderDTO) {
+    ResponseDTO<String> createBusinessOrder(@RequestBody BusinessOrderDTO businessOrderDTO) {
         DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
-        ResponseDTO responseDTO = new ResponseDTO<>();
+        ResponseDTO<String> responseDTO = new ResponseDTO<>();
         try{
-            transactionService.createBusinessOrder(businessOrderDTO);
+            String businessOrderId = transactionService.createBusinessOrder(businessOrderDTO);
+            responseDTO.setResponseData(businessOrderId);
             responseDTO.setResult(StatusConstant.SUCCESS);
             responseDTO.setErrorInfo("订单创建成功");
 
@@ -73,8 +74,6 @@ public class TransactionController {
         }
         return responseDTO;
     }
-
-
 
     /**
      * 获取用户购物车中未支付订单数量
@@ -171,10 +170,13 @@ public class TransactionController {
     @LoginRequired
     public
     @ResponseBody
-    ResponseDTO<List<BusinessOrderDTO>> businessOrderList(@RequestParam String userId, @RequestParam String status) {
+    ResponseDTO<List<BusinessOrderDTO>> businessOrderList(@RequestParam String userId,
+                                                          @RequestParam String status,
+                                                          @RequestParam String businessOrderId) {
         DataSourceSwitch.setDataSourceType(DataSourceInstances.WRITE);
         ResponseDTO<List<BusinessOrderDTO>> responseDTO = new ResponseDTO<>();
-        List<BusinessOrderDTO> businessOrderDTOList =  transactionService.getBusinessOrderList(userId,status);
+        //若businessOrderId为""，则用户订单列表是获取所有根据status状态订单，如果不为空，则为指定ID的订单
+        List<BusinessOrderDTO> businessOrderDTOList =  transactionService.getBusinessOrderList(userId,status,businessOrderId);
         responseDTO.setResponseData(businessOrderDTOList);
         responseDTO.setResult(StatusConstant.SUCCESS);
         return responseDTO;

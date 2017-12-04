@@ -18,7 +18,7 @@ public interface TransactionService {
 
     void updateBusinessOrderStatus(List<BusinessOrderDTO> businessOrderDTOList) throws Exception;
 
-    List<BusinessOrderDTO> getBusinessOrderList(String userId, String status);
+    List<BusinessOrderDTO> getBusinessOrderList(String userId, String status,String businessOrderId);
 
     List<UserOrderAddressDTO> getUserAddressList(String userId);
 
@@ -26,5 +26,5 @@ public interface TransactionService {
 
     void updateUserAddress(UserOrderAddressDTO userOrderAddressDTO) throws Exception;
 
-    void createBusinessOrder(BusinessOrderDTO businessOrderDTO) throws Exception;
+    String createBusinessOrder(BusinessOrderDTO businessOrderDTO) throws Exception;
 }
