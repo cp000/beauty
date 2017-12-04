@@ -2,6 +2,7 @@ package com.meixiang.beauty.modules.system.impl;
 
 import com.aliyun.opensearch.sdk.dependencies.com.google.gson.Gson;
 import com.meixiang.beauty.common.constant.StatusConstant;
+import com.meixiang.beauty.common.dto.system.PageParamDTO;
 import com.meixiang.beauty.common.dto.system.UserInfoDTO;
 import com.meixiang.beauty.common.dto.system.ValidateCodeDTO;
 import com.meixiang.beauty.common.utils.*;
@@ -70,9 +71,9 @@ public class UserServiceImpl implements UserService {
         try {
             redisLock.tryLock(1, TimeUnit.SECONDS);
 
-            userInfoDTO.setLogin_date(new Date());
-            userInfoDTO.setLogin_ip(loginIP);
-            userInfoDTO.setUser_openid(wechatBean.getOpenid());
+            userInfoDTO.setLoginDate(new Date());
+            userInfoDTO.setLoginIp(loginIP);
+            userInfoDTO.setUserOpenid(wechatBean.getOpenid());
             userInfoDTO.setNickname(wechatBean.getNickname());
 
             if(userInfoDTOList.size()>0)
@@ -110,6 +111,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserInfoDTO getUserInfo(String userId) {
+        return null;
+    }
+
+    @Override
+    public List<UserInfoDTO> getAllUserInfo(PageParamDTO<String> pageParamDTO) {
         return null;
     }
 

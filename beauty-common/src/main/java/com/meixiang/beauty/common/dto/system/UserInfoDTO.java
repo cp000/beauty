@@ -41,16 +41,16 @@ public class UserInfoDTO {
     private String photo;
 
     @JSONField(name = "loginIp")
-    private String login_ip;
+    private String loginIp;
 
     @JSONField(name = "loginDate")
-    private Date login_date;
+    private Date loginDate;
 
     @JSONField(name = "createDate")
-    private Date create_date;
+    private Date createDate;
 
     @JSONField(name = "delFlag")
-    private String del_flag;
+    private String delFlag;
 
     public String getId() {
         return id;
@@ -140,35 +140,35 @@ public class UserInfoDTO {
         this.photo = photo;
     }
 
-    public String getLogin_ip() {
-        return login_ip;
+    public String getLoginIp() {
+        return loginIp;
     }
 
-    public void setLogin_ip(String login_ip) {
-        this.login_ip = login_ip;
+    public void setLoginIp(String loginIp) {
+        this.loginIp = loginIp;
     }
 
-    public Date getLogin_date() {
-        return login_date;
+    public Date getLoginDate() {
+        return loginDate;
     }
 
-    public void setLogin_date(Date login_date) {
-        this.login_date = login_date;
+    public void setLoginDate(Date loginDate) {
+        this.loginDate = loginDate;
     }
 
-    public Date getCreate_date() {
-        return create_date;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreate_date(Date create_date) {
-        this.create_date = create_date;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
-    public String getDel_flag() {
-        return del_flag;
+    public String getDelFlag() {
+        return delFlag;
     }
 
-    public void setDel_flag(String del_flag) {
-        this.del_flag = del_flag;
+    public void setDelFlag(String delFlag) {
+        this.delFlag = delFlag;
     }
 }
